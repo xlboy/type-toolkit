@@ -1,0 +1,1 @@
+export type Has<U, U1> = [U1] == [U] ? true : false

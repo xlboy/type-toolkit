@@ -1,0 +1,3 @@
+import type { Split } from '../split/index.tzen'
+
+export type At<Str: string, Index: number> = Split<Str, ''>[Index]

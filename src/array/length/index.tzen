@@ -1,0 +1,1 @@
+export type Length<Arr: ReadonlyArray<any>> = Arr['length']

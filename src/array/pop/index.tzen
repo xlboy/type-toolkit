@@ -1,0 +1,7 @@
+export type Pop<Arr: ReadonlyArray<any>> =^{
+  if (Arr == readonly ([...infer LBody, any] | [...infer LBody, any?])) {
+    return LBody
+  } else {
+    return Arr
+  }
+}

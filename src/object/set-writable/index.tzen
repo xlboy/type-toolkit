@@ -1,0 +1,13 @@
+import type { Simplify } from '../simplify/index.tzen'
+
+export type SetWritable<
+  O: object, 
+  Keys: keyof O = keyof O
+> = ^{
+  type TargetValues = Pick<O, Keys>;
+  type FilteredObject = {
+    -readonly [K in keyof TargetValues]: TargetValues[K]
+  }
+  
+  return Simplify<Omit<O, Keys> & FilteredObject>
+}

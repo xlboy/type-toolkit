@@ -1,0 +1,11 @@
+export type Simplify<T> = {
+  [K in keyof T]: ^{
+    type Value = T[K];
+
+    if (Value == object) {
+      return Simplify<Value>;
+    } else {
+      return Value;
+    }
+  }
+} & {};

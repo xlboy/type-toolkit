@@ -1,0 +1,11 @@
+import type { emptyObjectSymbol } from './_temp'
+
+type EmptyObject = { [_ in emptyObjectSymbol]?: never };
+
+export type IsEmpty<T> = ^{
+  if ([T] == [never]) {
+    return false
+  }
+  
+  return T == EmptyObject ? true : false
+};

@@ -1,0 +1,26 @@
+{
+  "name": "type-toolkit",
+  "version": "1.0.0",
+  "description": "A TypeScript type utility library developed using the TypeZen language",
+  "main": "./src/index.ts",
+  "scripts": {},
+  "keywords": [
+    "typescript",
+    "type-tools",
+    "type-helper",
+    "type-toolkit",
+    "typezen"
+  ],
+  "author": "xlboy",
+  "license": "MIT",
+  "devDependencies": {
+    "@type-zen/cli": "^0.2.0",
+    "@type-zen/preset-type": "^0.2.0",
+    "@type-zen/ts-plugin": "^0.1.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.3"
+  },
+  "peerDependencies": {
+    "typescript": "> 4.9"
+  }
+}

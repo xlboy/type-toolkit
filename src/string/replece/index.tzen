@@ -1,0 +1,18 @@
+interface ReplaceOptions {
+  all?: boolean;
+}
+
+export type Replace<
+  Str: string,
+  SearchValue: string,
+  ReplaceValue: string,
+  Options: ReplaceOptions = {}
+> = ^{
+  if (Str == `${infer Head}${SearchValue}${infer Tail}`) {
+    type RightValue = Options['all'] == true ? Replace<Tail, SearchValue, ReplaceValue, Options> : Tail;
+    
+    return `${Head}${ReplaceValue}${RightValue}`;
+  }
+
+  return Str;
+}

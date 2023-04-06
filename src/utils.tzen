@@ -1,0 +1,7 @@
+export type Equal<X, Y> =
+  (<T>() => T == X ? 1 : 2) ==
+  (<T>() => T == Y ? 1 : 2) ? true : false
+
+export type Checker<T: true[]> = T;
+
+export type Cast<A1: any, A2:any> = A1 == A2 ? A1 : A2

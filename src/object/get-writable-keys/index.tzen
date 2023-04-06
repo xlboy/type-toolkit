@@ -1,0 +1,23 @@
+import type { Equal } from '../../utils.tzen'
+
+type _Get<O: object> =^{
+  type OKeys = keyof O;
+  
+  type U = {
+    [K in OKeys]-?: ^{
+      type LC = {-readonly [Q in K]: O[K]};
+      type RC = {[Q in K]: O[K]};
+      type IsWritable = Equal<LC, RC>;
+
+      return IsWritable == true ? K : never
+    }
+  };
+
+  return U[OKeys]
+}
+
+export type GetWritableKeys<O: object> = ^{
+  for (infer Item in O) {
+    return _Get<Item>
+  }
+}

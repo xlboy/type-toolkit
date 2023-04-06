@@ -1,0 +1,15 @@
+export type Join<Strings: ReadonlyArray<string | number>, Delimiter: string = ''> = ^{
+  if (Strings == []) {
+    return ''
+  }
+
+  if (Strings == readonly [string | number]) {
+    return `${Strings[0]}`
+  }
+
+  if (Strings == readonly [string | number, ...infer Rest == ReadonlyArray<string | number>]) {
+    return `${Strings[0]}${Delimiter}${Join<Rest, Delimiter>}`
+  }
+
+  return string
+}
