@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "strict": true,
-    "plugins": [{ "name": "@type-zen/ts-plugin" }],
-    "types": ["@type-zen/preset-type"]
+    "plugins": [{ "name": "@type-zen/ts-plugin" }]
   },
   "include": ["src/**/*"]
 }

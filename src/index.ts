@@ -1,3 +1,5 @@
+import '@type-zen/preset-type'
+
 export type * as Array from './array'
 export type * as A from './array'
 
