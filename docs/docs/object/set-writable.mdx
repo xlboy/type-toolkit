@@ -1,0 +1,18 @@
+Set the writable property of the object
+
+### Parameters
+
+- `O` - (**object**): The object to set the writable property
+- `Keys` - (**extends keyof O**): The keys to set the writable property
+
+### Returns
+
+`(object)`: The object with the writable property set
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T1 = tt.O.SetWritable<{ a: 1, b: 2, readonly c: 3 }, 'c'> // { a: 1, b: 2, c: 3 }
+```

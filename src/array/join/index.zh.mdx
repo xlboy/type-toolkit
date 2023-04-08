@@ -1,0 +1,20 @@
+使用指定的分隔符将数组中的元素连接到字符串中
+
+### 参数
+
+- `Strings` - 要连接的字符串数组（字符串/整数）
+- `Separator` - 用于连接字符串的分隔符
+
+### 返回值
+
+`(string)`: 连接好的字符串
+
+### 示例
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.A.Join<['a', 'b', 'c'], '-'> // 'a-b-c' 
+type T1 = tt.A.Join<['a', 'b', 'c'], '->'> // 'a->b->c'
+type T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
+```

@@ -1,4 +1,7 @@
-export type Join<Strings: ReadonlyArray<string | number>, Delimiter: string = ''> = ^{
+export type Join<
+  Strings: ReadonlyArray<string | number>, 
+  Delimiter: string = ''
+> = ^{
   if (Strings == []) {
     return ''
   }

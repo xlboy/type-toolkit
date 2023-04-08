@@ -1,0 +1,18 @@
+删除数组中的最后一个元素
+
+### 参数
+
+- `Arr` - 数组源
+
+### 返回值
+
+`(Arr.slice(0, Arr.length - 1))`: 没有最后一个元素的数组
+
+### 示例
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]
+type T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]
+```

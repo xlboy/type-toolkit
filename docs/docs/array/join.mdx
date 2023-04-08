@@ -1,0 +1,20 @@
+Use the specified separator to join the elements of an array into a string
+
+### Parameters
+
+- `Strings` - The string array (strings/numbers) to join.
+- `Separator` - The separator used to join the strings.
+
+### Returns
+
+`(string)`: The joined string.
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.A.Join<['a', 'b', 'c'], '-'> // 'a-b-c' 
+type T1 = tt.A.Join<['a', 'b', 'c'], '->'> // 'a->b->c'
+type T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
+```

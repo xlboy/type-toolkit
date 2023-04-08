@@ -1,6 +1,6 @@
-export type Simplify<T> = {
-  [K in keyof T]: ^{
-    type Value = T[K];
+export type Simplify<O: object> = {
+  [K in keyof O]: ^{
+    type Value = O[K];
 
     if (Value == object) {
       return Simplify<Value>;

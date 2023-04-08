@@ -1,1 +1,19 @@
-嗯我是英文…
+Check if an element is included in a union type
+
+#### Parameters
+
+- `U` - The union value to check
+- `T` - The target element to check
+
+#### Returns
+
+`(boolean)`: `true` if `T` is included in `U`, otherwise `false`.
+
+#### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.U.Has<'1' | '3', '1'>; // true
+type T1 = tt.U.Has<'1' | '3', '2'>; // false
+```

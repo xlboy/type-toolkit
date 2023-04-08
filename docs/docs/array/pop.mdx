@@ -1,0 +1,18 @@
+Delete the last element in the array
+
+### Parameters
+
+- `Arr` - The source of the array to delete the last element from
+
+### Returns
+
+`(Arr.slice(0, Arr.length - 1))`: The array without the last element
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]
+type T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]
+```
