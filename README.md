@@ -19,4 +19,4 @@ type Test1 = tt.O.Pick<{ a: 1, b: 2 }, 'a'>;
 
 ## Documentation
 
-- [API Reference](https://type-toolkit.vercel.app/api/category/object)
+- [API Reference](https://type-toolkit-docs.vercel.app/api/category/object)
