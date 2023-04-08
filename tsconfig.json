@@ -3,5 +3,5 @@
     "strict": true,
     "plugins": [{ "name": "@type-zen/ts-plugin" }]
   },
-  "include": ["src/**/*"]
+  "include": ["src", "srcipts"]
 }
