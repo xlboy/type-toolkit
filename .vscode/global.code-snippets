@@ -1,0 +1,89 @@
+{
+  "create a new mdx - zh": {
+    "prefix": "mdxzhinit",
+    "body": [
+      "...",
+      "",
+      "### 参数",
+      "",
+      "- `...` - ...",
+      "",
+      "### 返回值",
+      "",
+      "`(...)`: ...",
+      "",
+      "### 示例",
+      "",
+      "```ts",
+      "import type tt from 'type-toolkit';",
+      "",
+      "...",
+      "```",
+      ""
+    ],
+    "description": "create a new mdx"
+  },
+  "create a new mdx - en": {
+    "prefix": "mdxeninit",
+    "body": [
+      "...",
+      "",
+      "### Parameters",
+      "",
+      "- `...` - ...",
+      "",
+      "### Returns",
+      "",
+      "`(...)`: ...",
+      "",
+      "### Example",
+      "",
+      "```ts",
+      "import type tt from 'type-toolkit';",
+      "",
+      "...",
+      "```",
+      ""
+    ],
+    "description": "create a new mdx"
+  },
+  "create a new test": {
+    "prefix": "testinit",
+    "body": [
+      "import { Equal, Checker } from '../../utils.tzen';",
+      "import { ... } from './index.tzen';",
+      "",
+      "type _ = Checker<",
+      "  [",
+      "    Equal<..., true>,",
+      "  ]",
+      ">;",
+      ""
+    ],
+    "description": "create a new test"
+  },
+  "create a new jsdoc": {
+    "prefix": "jsdocinit",
+    "body": [
+      "/**",
+      " * $$target-slot: ...",
+      " *",
+      " * ...",
+      " *",
+      " * @param _ ...",
+      " *",
+      " * @returns (**...**): ...",
+      " *",
+      " * @example",
+      " * ```ts",
+      " * import type tt from 'type-toolkit'",
+      " *",
+      " * ...",
+      " * ```",
+      " */",
+      "type Preview = 1;",
+      ""
+    ],
+    "description": "create a new jsdoc"
+  }
+}
