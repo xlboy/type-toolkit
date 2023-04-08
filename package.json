@@ -44,5 +44,8 @@
   "peerDependencies": {
     "@type-zen/preset-type": "^0.2.0",
     "typescript": "> 4.9"
+  },
+  "dependencies": {
+    "@type-zen/preset-type": "^0.2.0"
   }
 }

@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@type-zen/cli': ^0.2.0
       '@type-zen/core': 0.0.1-alpha.18
+      '@type-zen/preset-type': ^0.2.0
       '@type-zen/ts-plugin': ^0.1.0
       '@types/fs-extra': ^11.0.1
       '@types/lodash-es': ^4.17.7
@@ -18,6 +19,8 @@ importers:
       rimraf: ^4.4.1
       tsx: ^3.12.6
       typescript: ^5.0.3
+    dependencies:
+      '@type-zen/preset-type': 0.2.0
     devDependencies:
       '@type-zen/cli': 0.2.0
       '@type-zen/core': 0.0.1-alpha.18
@@ -2920,6 +2923,10 @@ packages:
   /@type-zen/core/0.0.1-alpha.18:
     resolution: {integrity: sha512-2uFftmKwzGBl+WF8ynEW+wd0e1qccjyk8doTy+2AMR6jCPnmqam4JLlV4mycShMoHCRBiOgdNzRm3BW6qunymA==}
     dev: true
+
+  /@type-zen/preset-type/0.2.0:
+    resolution: {integrity: sha512-UsH3wQigJh+HA5sjuOV8rUhaib8YBmV2/01e/ZODQBHTK2vNh+IHrB0yVR8uzoseD9ZAZE4hk8PXZT90aM1GLw==}
+    dev: false
 
   /@type-zen/ts-plugin/0.1.0:
     resolution: {integrity: sha512-0ZMoHjbCgq51oP11yVCFNuw5CecnleQ3eieQDXe157tmNON/MNzulL961xNOqYX460c3hpGpnAAenWQICtJX8A==}
