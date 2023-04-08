@@ -1,16 +1,14 @@
 import fg from 'fast-glob';
 import fs from 'fs-extra';
 import path from 'node:path';
+import * as colorette from 'colorette';
 import * as tz from '@type-zen/core';
 import consola from 'consola';
 import _ from 'lodash-es';
 
-async function main() {
+function main() {
   const cwd = process.cwd();
-  const filePaths = fg.sync(['src/**/*.tzen', 'src/**/*.ts'], {
-    cwd,
-    absolute: true
-  });
+  const filePaths = fg.sync(['src/**/*.tzen', 'src/**/*.ts'], { cwd, absolute: true });
 
   fs.removeSync(path.resolve(cwd, 'dist'));
 
@@ -110,7 +108,13 @@ async function main() {
 
     const outputTzenFilePath = path.resolve(outputDirPath, path.basename(tzenFilePath));
     fs.copySync(tzenFilePath, outputTzenFilePath);
+
+    consola.success(
+      'Compiled: ' + colorette.blue(path.relative(cwd, outputCompiledTzenFilePath))
+    );
   });
+
+  return;
 
   function isTargetStatement(id: string, statement: tz.stmtNode.StatementBase) {
     if (tz.nodeGuard.statement.isInterface(statement)) {
