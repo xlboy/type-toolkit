@@ -1,23 +1,22 @@
 # type-toolkit
 
-### Params
+A TypeScript type utility library developed using the [TypeZen](https://www.github.com/xlboy/type-zen) language
 
-| Property     | Description                               | Type      | Default |
-| ------------ | ----------------------------------------- | --------- | ------- |
-| defaultValue | The default value of the state. Optional. | `boolean` | `false` |
+## Installation
 
-### Result
+```bash
+npm install type-toolkit -D
+```
 
-| Property | Description                            | Type      |
-| -------- | -------------------------------------- | --------- |
-| state    | Current value                          | `boolean` |
-| actions  | A set of methods to update state value | `Actions` |
+## Usege
 
-### Actions
+```typescript
+import type tt from 'type-toolkit';
 
-| Property | Description          | Type                       |
-| -------- | -------------------- | -------------------------- |
-| toggle   | Toggle state          | `() => void` |
-| set      | Set state                | `(value: boolean) => void`|
-| setTrue  | Set state to `true` | `() => void` |
-| setFalse | Set state to `false` | `() => void` |
+type Test1 = tt.O.Pick<{ a: 1, b: 2 }, 'a'>;
+//        ^? type Test1 = { a: 1 }
+```
+
+## Documentation
+
+- [API Reference](https://type-toolkit.vercel.app/api/category/object)
