@@ -6,6 +6,9 @@ import * as tz from '@type-zen/core';
 import consola from 'consola';
 import _ from 'lodash-es';
 
+// 1. 将 src 中的 *.tzen 文件进行编译输，并输出到相应的 .tzen.d.ts 文件中
+// 2. 将 src 中的 *.jsdoc.ts 文件中的 JSDoc 插入到对应的 .tzen.d.ts 文件中
+// 3. 将 src 中的 *.ts 文件（非 .jsdoc.ts）直接复制到 dist 中
 function main() {
   const cwd = process.cwd();
   const filePaths = fg.sync(['src/**/*.tzen', 'src/**/*.ts'], { cwd, absolute: true });

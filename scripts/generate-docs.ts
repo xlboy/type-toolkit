@@ -1,10 +1,9 @@
 import fg from 'fast-glob';
 import fs from 'fs-extra';
 import path from 'node:path';
-import * as tz from '@type-zen/core';
-import consola from 'consola';
-import _ from 'lodash-es';
 
+// 1. 将 src 中的 {en, zh}*.mdx 文件移动到 docs 中（en, zh 对应着不同的目录）
+// 2. 在移动的过程中，会根据 *.{en, zh}.mdx 的文件名进行适当的过滤处理
 function main() {
   const cwd = process.cwd();
   const mdxFilePaths = fg.sync(['src/**/*.mdx'], { cwd, absolute: true });
@@ -51,7 +50,6 @@ function main() {
       const targetDocsDirPath = path.resolve(localeDirPath, relativeDirPath);
 
       fs.ensureDirSync(targetDocsDirPath);
-
       fs.writeFileSync(
         path.resolve(targetDocsDirPath, `${filePrefixName}.mdx`),
         mdxFileContent
