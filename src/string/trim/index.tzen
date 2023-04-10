@@ -1,0 +1,4 @@
+import type { TrimStart } from "../trim-start/index.tzen"
+import type { TrimEnd } from "../trim-end/index.tzen"
+
+export type Trim<Str: string> = TrimStart<TrimEnd<Str>>

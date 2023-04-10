@@ -1,0 +1,9 @@
+import type { Whitespace } from "../_internal"
+
+export type TrimStart<Str: string> = ^{
+  if (Str == `${Whitespace}${infer R}`) {
+    return TrimStart<R>
+  } else {
+    return Str 
+  }
+}
