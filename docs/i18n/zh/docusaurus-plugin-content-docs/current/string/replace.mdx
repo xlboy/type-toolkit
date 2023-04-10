@@ -1,0 +1,24 @@
+---
+slug: /string/replace
+title: Replace
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+替换字符串中出现的子字符串
+
+### 参数
+<ParamTable data={[{"name":"Str","type":"string","description":"要替换子字符串的字符串源"},{"name":"SearchValue","type":"string","description":"要替换的子字符串"},{"name":"ReplaceValue","type":"string","description":"用于替换子字符串的字符串"},{"name":"Options","type":{"name":"ReplaceOptions","link":"https://github.com/xlboy/type-zen/blob/master/src/string/replace/index.tzen#L1-L3","code":"interface ReplaceOptions {\n  all?: boolean;\n}"},"default":"{}","description":"选项"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"string","description":"替换后的字符串"}} />
+
+### 示例
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.Replace<'hello world', 'l', 'L'> // 'heLlo world'
+type T1 = tt.S.Replace<'hello world', 'l', 'L', { all: true }> // 'heLLo worLd'
+```

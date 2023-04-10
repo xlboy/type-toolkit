@@ -1,9 +1,13 @@
 {
   "create a new docs config file": {
-    "prefix": "docsinit",
+    "prefix": "",
     "body": [
       "export default {",
       "  outputFilePath: '.mdx',",
+      "  setting: {",
+      "    slug: '',",
+      "    title: ''",
+      "  },",
       "  description: {",
       "    en: '',",
       "    zh: ''",

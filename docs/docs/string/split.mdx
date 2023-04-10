@@ -1,0 +1,24 @@
+---
+slug: /string/split
+title: Split
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+Split a string into an array by a specified delimiter
+
+### Parameters
+<ParamTable data={[{"name":"Str","type":"string","description":"The string to split"},{"name":"Delimiter","type":"string","description":"The delimiter used to split the string"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string[]","description":"The array of the split string"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.Split<'a-b-c', '-'> // ['a', 'b', 'c']
+type T1 = tt.S.Split<'a->b->c', '->'> // ['a', 'b', 'c']
+```

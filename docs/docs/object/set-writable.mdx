@@ -1,0 +1,23 @@
+---
+slug: /object/set-writable
+title: SetWritable
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+Set the writable property of the object
+
+### Parameters
+<ParamTable data={[{"name":"O","type":"object","description":"The object to set the writable property"},{"name":"Keys","type":"keyof O","default":"keyof O","description":"The keys to set the writable property"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"object","description":"The object with the writable property set"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T1 = tt.O.SetWritable<{ a: 1, b: 2, readonly c: 3 }, 'c'> // { a: 1, b: 2, c: 3 }
+```

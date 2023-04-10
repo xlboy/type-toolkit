@@ -1,0 +1,25 @@
+---
+slug: /array/join
+title: Join
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+Use the specified delimiter to join the elements of an array into a string
+
+### Parameters
+<ParamTable data={[{"name":"Strings","type":"ReadonlyArray<string | number>","description":"The string array to join"},{"name":"Delimiter","type":"string","description":"The delimiter used to join the strings","default":"\"\""}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string","description":"The joined string"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.A.Join<['a', 'b', 'c'], '-'> // 'a-b-c' 
+type T1 = tt.A.Join<['a', 'b', 'c'], '->'> // 'a->b->c'
+type T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
+```

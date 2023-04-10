@@ -1,0 +1,23 @@
+---
+slug: /object/simplify
+title: Simplify
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+Flatten computed objects for better preview
+
+### Parameters
+<ParamTable data={[{"name":"O","type":"object","description":"The object to simplify"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"object","description":"The simplified object"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.O.Simplify<A & B & C> // { ...A, ...B, ...C }
+```
