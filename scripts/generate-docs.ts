@@ -97,7 +97,7 @@ ${docsConfig.example.trimStart().trimEnd()}
     return {
       name: data.name,
       link:
-        'https://github.com/xlboy/type-zen/blob/master/src/' +
+        'https://github.com/xlboy/type-toolkit/blob/master/src/' +
         data.code.filePath +
         '#L' +
         data.code.line[0] +
