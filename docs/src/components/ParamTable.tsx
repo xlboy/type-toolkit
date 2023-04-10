@@ -48,6 +48,7 @@ function ParamTable(props: ParamTableProps): JSX.Element {
       scroll={{ x: 700 }}
       columns={columns}
       dataSource={props.data}
+      rowKey="name"
       pagination={false}
       size="middle"
       bordered

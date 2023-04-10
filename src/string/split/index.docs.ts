@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'string/Split.mdx',
+  outputFilePath: 'string/split.mdx',
+  setting: {
+    slug: 'string/split',
+    title: 'Split'
+  },
   description: {
     en: 'Split a string into an array by a specified delimiter',
     zh: '将字符串按指定的分隔符拆分为数组'

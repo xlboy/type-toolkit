@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'union/Has.mdx',
+  outputFilePath: 'union/has.mdx',
+  setting: {
+    slug: 'union/has',
+    title: 'Has'
+  },
   description: {
     en: 'Check if an element is included in a union type',
     zh: '是否包含某个元素'

@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'object/SetWritable.mdx',
+  outputFilePath: 'object/set-writable.mdx',
+  setting: {
+    slug: 'object/set-writable',
+    title: 'SetWritable'
+  },
   description: {
     en: 'Set the writable property of the object',
     zh: '设置对象的可写属性'

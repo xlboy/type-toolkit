@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'array/Join.mdx',
+  outputFilePath: 'array/join.mdx',
+  setting: {
+    slug: 'array/join',
+    title: 'Join'
+  },
   description: {
     en: 'Use the specified delimiter to join the elements of an array into a string',
     zh: '使用指定的分隔符将数组的元素连接成一个字符串'

@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'string/At.mdx',
+  outputFilePath: 'string/at.mdx',
+  setting: {
+    slug: 'string/at',
+    title: 'At'
+  },
   description: {
     en: 'Get the character at the specified position',
     zh: '获取指定位置的字符'

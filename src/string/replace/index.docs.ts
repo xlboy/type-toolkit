@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'string/Replace.mdx',
+  outputFilePath: 'string/replace.mdx',
+  setting: {
+    slug: 'string/replace',
+    title: 'Replace'
+  },
   description: {
     en: 'Replace occurrence of a substring in a string',
     zh: '替换字符串中出现的子字符串'

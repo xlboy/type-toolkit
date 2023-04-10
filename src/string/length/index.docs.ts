@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'string/Length.mdx',
+  outputFilePath: 'string/length.mdx',
+  setting: {
+    slug: 'string/length',
+    title: 'Length'
+  },
   description: {
     en: 'Get the length of a string',
     zh: '获取字符串的长度'

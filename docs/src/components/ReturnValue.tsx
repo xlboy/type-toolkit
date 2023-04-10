@@ -37,6 +37,7 @@ function ReturnValue(props: ReturnValueProps): JSX.Element {
       scroll={{ x: 700 }}
       columns={columns}
       dataSource={[props.data]}
+      rowKey={record => record.type || record.description || '1'}
       pagination={false}
       size="middle"
       bordered

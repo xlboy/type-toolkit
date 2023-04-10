@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'array/Length.mdx',
+  outputFilePath: 'array/length.mdx',
+  setting: {
+    slug: 'array/length',
+    title: 'Length'
+  },
   description: {
     en: 'Get the length of an array',
     zh: '获取数组的长度'

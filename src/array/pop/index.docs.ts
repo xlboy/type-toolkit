@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'array/Pop.mdx',
+  outputFilePath: 'array/pop.mdx',
+  setting: {
+    slug: 'array/pop',
+    title: 'Pop'
+  },
   description: {
     en: 'Delete the last element in the array',
     zh: '删除数组中的最后一个元素'

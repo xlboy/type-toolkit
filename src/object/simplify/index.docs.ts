@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'object/Simplify.mdx',
+  outputFilePath: 'object/simplify.mdx',
+  setting: {
+    slug: 'object/simplify',
+    title: 'Simplify'
+  },
   description: {
     en: 'Flatten computed objects for better preview',
     zh: '将经过计算处理（交叉、...）的对象进行简化（扁平化），以便预览'

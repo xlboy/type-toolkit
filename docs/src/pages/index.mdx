@@ -13,12 +13,6 @@ npm install type-toolkit -D
 ```typescript
 import type tt from 'type-toolkit';
 
-type Test1 = tt.O.Pick<{ a: 1, b: 2 }, 'a'>;
-//        ^? type Test1 = { a: 1 }
+type Test1 = tt.O.Pick<{ a: 1, b: 2 }, 'a'>; // { a: 1 }
 ```
 
-## <a href="/api/category/object">API</a>
-
-import ParamTable from '../components/ParamTable'
-
-<ParamTable />

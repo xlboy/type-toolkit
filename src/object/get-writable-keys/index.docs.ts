@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'object/GetWritableKeys.mdx',
+  outputFilePath: 'object/get-writable-keys.mdx',
+  setting: {
+    slug: 'object/get-writable-keys',
+    title: 'GetWritableKeys'
+  },
   description: {
     en: 'Gets the key in the object that has write permission.',
     zh: '获得对象中具有写入权限的键'

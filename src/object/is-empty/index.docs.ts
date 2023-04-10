@@ -1,5 +1,9 @@
 export default {
-  outputFilePath: 'object/IsEmpty.mdx',
+  outputFilePath: 'object/is-empty.mdx',
+  setting: {
+    slug: 'object/is-empty',
+    title: 'IsEmpty'
+  },
   description: {
     en: 'Check if an object is empty',
     zh: '检查一个对象是否为空'
