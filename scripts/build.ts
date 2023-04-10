@@ -119,7 +119,7 @@ function main() {
 
   return;
 
-  function isTargetStatement(id: string, statement: tz.stmtNode.StatementBase) {
+  function isTargetStatement(id: string, statement: tz.stmtNode.StatementBase): boolean {
     if (tz.nodeGuard.statement.isInterface(statement)) {
       return statement.name.value === id;
     }
@@ -143,6 +143,8 @@ function main() {
     if (tz.nodeGuard.statement.isExportNamed(statement)) {
       return isTargetStatement(id, statement.body);
     }
+
+    return false;
   }
 
   function getRelativeSuffixFilePath(tzenFilePath: string, suffix: string) {

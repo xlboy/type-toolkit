@@ -1,0 +1,19 @@
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+设置对象的可写属性
+
+### 参数
+<ParamTable data={[{"name":"O","type":"object","description":"要设置可写属性的对象源"},{"name":"Keys","type":"keyof O","default":"keyof O","description":"要设置可写属性的键"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"object","description":"设置了可写属性的对象"}} />
+
+### 示例
+
+```ts
+import type tt from 'type-toolkit';
+
+type T1 = tt.O.SetWritable<{ a: 1, b: 2, readonly c: 3 }, 'c'> // { a: 1, b: 2, c: 3 }
+```

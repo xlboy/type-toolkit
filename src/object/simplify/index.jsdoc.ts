@@ -3,7 +3,7 @@
  *
  * Flatten computed objects for better preview.
  *
- * @param O The object to simplify
+ * @param O (**object**): The object to simplify
  *
  * @returns (**object**): The simplified object
  *

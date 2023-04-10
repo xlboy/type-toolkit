@@ -7,6 +7,6 @@ type _ = Checker<
     Equal<At<'a', 0>, 'a'>,
     Equal<At<'a', 1>, undefined>,
     Equal<At<'ab', 0>, 'a'>,
-    Equal<At<'ab', 1>, 'b'>
+    Equal<At<'ab', 1>, 'b'>,
   ]
 >;

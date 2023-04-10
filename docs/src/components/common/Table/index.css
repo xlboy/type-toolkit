@@ -1,0 +1,28 @@
+.custom-table .ant-table {
+  background-color: transparent !important;
+}
+
+/* Override Docusaurus preset styles */
+.custom-table table {
+  display: table !important;
+  margin: 0 !important;
+}
+
+.custom-table table thead {
+  background-color: transparent;
+}
+
+.custom-table table tr {
+  background-color: transparent;
+  border-top: 0;
+}
+
+.custom-table table td {
+  color: auto;
+}
+
+.custom-table table th,
+.custom-table table td {
+  border: 0;
+  padding: auto;
+}

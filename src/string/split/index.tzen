@@ -1,22 +1,22 @@
 import type { Pop } from '../../array/pop/index.tzen'
 import type { Cast } from '../../utils.tzen'
 
-type __Split<Str: string, Separator: string, T: string[] = []> = ^{
-  if (Str == `${infer BS}${Separator}${infer AS}`) {
-    return __Split<AS, Separator, [...T, BS]>
+type __Split<Str: string, Delimiter: string, T: string[] = []> = ^{
+  if (Str == `${infer BS}${Delimiter}${infer AS}`) {
+    return __Split<AS, Delimiter, [...T, BS]>
   } else {
     return [...T, Str]
   }
 }
 
-type _Split<Str: string, Separator: string> = ^{
-  type Result = __Split<Str, Separator>
+type _Split<Str: string, Delimiter: string> = ^{
+  type Result = __Split<Str, Delimiter>
 
-  return Separator == '' ? Pop<Result> : Result
+  return Delimiter == '' ? Pop<Result> : Result
 }
 
-export type Split<Str: string, Separator: string = ''> = ^{
-  for (infer X in _Split<Str, Separator>) {
+export type Split<Str: string, Delimiter: string = ''> = ^{
+  for (infer X in _Split<Str, Delimiter>) {
     return Cast<X, string[]>
   }
 }

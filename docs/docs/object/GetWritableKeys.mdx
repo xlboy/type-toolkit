@@ -1,0 +1,21 @@
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+获得对象中具有写入权限的键
+
+### Parameters
+<ParamTable data={[{"name":"O","type":"object","description":"The object to get the writable keys from"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string | never","description":"The writable keys (single or multiple[union]), or `never` if there is none"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.O.GetWritableKeys<{ a: 1 }> // 'a'
+type T2 = tt.O.GetWritableKeys<{ a: 1, b: 2, readonly c: 3 }> // 'a' | 'b'
+type T3 = tt.O.GetWritableKeys<{ readonly a: 1, readonly b: 2, readonly c: 3 }> // never
+```

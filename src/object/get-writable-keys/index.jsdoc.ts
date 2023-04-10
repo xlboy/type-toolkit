@@ -3,7 +3,7 @@
  *
  * Gets the key in the object that has write permission.
  *
- * @param O The object to get the writable keys from
+ * @param O (**object**): The object to get the writable keys from
  *
  * @returns (**string/never**): The writable keys (single or multiple[union]), or `never` if there is none
  *

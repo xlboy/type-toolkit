@@ -2,7 +2,7 @@ import type { emptyObjectSymbol } from './_temp'
 
 type EmptyObject = { [_ in emptyObjectSymbol]?: never };
 
-export type IsEmpty<O> = ^{
+export type IsEmpty<O: object> = ^{
   if ([O] == [never]) {
     return false
   }

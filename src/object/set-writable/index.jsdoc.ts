@@ -3,8 +3,8 @@
  *
  * Set the writable property of the object.
  *
- * @param O The object to set the writable property
- * @param Keys The keys to set the writable property
+ * @param O (**object**): The object to set the writable property
+ * @param Keys (**keypf O, default: `keyof O`**): The keys to set the writable property
  *
  * @returns (**object**): The object with the writable property set
  *

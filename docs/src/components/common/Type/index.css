@@ -1,0 +1,14 @@
+.type-popover code {
+  box-shadow: none;
+  border: 0;
+}
+
+.type-popover .ant-popover-inner {
+  padding: 0;
+}
+.type-popover .language-typescript {
+  margin: 0 !important;
+}
+.type-popover .ant-popover-arrow:before {
+  background-color: #f6f8fa !important;
+}

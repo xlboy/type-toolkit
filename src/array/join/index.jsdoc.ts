@@ -3,8 +3,8 @@
  *
  * Join the elements in an array into a string using a specified delimiter.
  *
- * @param Strings The strings to join (numbers/strings)
- * @param Delimiter (**default: `''`**): Delimiter to join the strings with
+ * @param Strings (**ReadonlyArray<string | number>**): The strings to join (numbers/strings)
+ * @param Delimiter (**string, default: `''`**): Delimiter to join the strings with
  *
  * @returns (**string**): The joined string
  *

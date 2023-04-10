@@ -1,0 +1,20 @@
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+获取指定位置的字符
+
+### Parameters
+<ParamTable data={[{"name":"Str","type":"string","description":"The string to get the character from"},{"name":"Index","type":"number","description":"The position of the character to get"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string","description":"The character at the specified position"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.At<'abc', 1> // 'b'
+type T1 = tt.S.At<'', 0> // undefined
+```

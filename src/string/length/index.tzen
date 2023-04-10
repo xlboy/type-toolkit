@@ -1,3 +1,3 @@
 import type { Split } from '../split/index.tzen'
 
-export type Length<S: string> = Split<S, ''>['length']
+export type Length<Str: string> = Split<Str, ''>['length']

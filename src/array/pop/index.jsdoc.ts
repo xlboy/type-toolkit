@@ -3,9 +3,9 @@
  *
  * Delete the last element in the array
  *
- * @param Arr The source of the array to delete the last element from
+ * @param Arr (**ReadonlyArray<any>**): The source of the array to delete the last element from
  *
- * @returns (**Arr.slice(0, Arr.length - 1)**): The array without the last element
+ * @returns (**any[]**): The array without the last element
  *
  * @example
  * ```ts

@@ -3,7 +3,7 @@
  *
  * Check if an object is empty.
  *
- * @param O The object to check
+ * @param O (**object**): The object to check
  *
  * @returns (**boolean**): Whether the object is empty
  *
