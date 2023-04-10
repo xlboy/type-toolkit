@@ -1,5 +1,5 @@
 /**
- * $target-slot: Join
+ * $$target-slot: Join
  *
  * Join the elements in an array into a string using a specified delimiter.
  *

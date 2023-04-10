@@ -1,5 +1,5 @@
 /**
- * $target-slot: SetWritable
+ * $$target-slot: SetWritable
  *
  * Set the writable property of the object.
  *

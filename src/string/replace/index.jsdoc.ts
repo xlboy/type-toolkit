@@ -1,5 +1,5 @@
 /**
- * $target-slot: Replace
+ * $$target-slot: Replace
  *
  * Replace occurrence of a substring in a string
  *

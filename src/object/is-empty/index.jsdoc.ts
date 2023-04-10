@@ -1,5 +1,5 @@
 /**
- * $target-slot: IsEmpty
+ * $$target-slot: IsEmpty
  *
  * Check if an object is empty.
  *

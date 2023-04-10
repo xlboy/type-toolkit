@@ -1,5 +1,5 @@
 /**
- * $target-slot: At
+ * $$target-slot: At
  *
  * Get the character at the specified position
  *

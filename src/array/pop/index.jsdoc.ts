@@ -1,5 +1,5 @@
 /**
- * $target-slot: Pop
+ * $$target-slot: Pop
  *
  * Delete the last element in the array
  *

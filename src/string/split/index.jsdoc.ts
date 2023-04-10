@@ -1,5 +1,5 @@
 /**
- * $target-slot: Split
+ * $$target-slot: Split
  *
  * Split a string into an array by a specified delimiter
  *

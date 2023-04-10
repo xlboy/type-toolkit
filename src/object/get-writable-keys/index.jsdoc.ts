@@ -1,5 +1,5 @@
 /**
- * $target-slot: GetWritableKeys
+ * $$target-slot: GetWritableKeys
  *
  * Gets the key in the object that has write permission.
  *

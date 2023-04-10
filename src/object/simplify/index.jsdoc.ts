@@ -1,5 +1,5 @@
 /**
- * $target-slot: Simplify
+ * $$target-slot: Simplify
  *
  * Flatten computed objects for better preview.
  *

@@ -1,5 +1,5 @@
 /**
- * $target-slot: Length
+ * $$target-slot: Length
  *
  * Get the length of a string
  *
