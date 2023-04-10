@@ -60,7 +60,7 @@
     "prefix": "jsdocinit",
     "body": [
       "/**",
-      " * $$target-slot: ...",
+      " * $$$target-slot: ...",
       " *",
       " * ...",
       " *",
