@@ -56,7 +56,7 @@ const config = {
             position: 'right'
           },
           {
-            href: 'https://github.com/xlboy/Type Toolkit',
+            href: 'https://github.com/xlboy/type-toolkit',
             label: 'GitHub',
             position: 'right'
           }
