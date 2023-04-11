@@ -19,6 +19,14 @@
   ],
   "author": "xlboy",
   "license": "MIT",
+  "homepage": "https://github.com/xlboy/type-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xlboy/type-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xlboy/type-toolkit/issues"
+  },
   "engines": {
     "node": ">=16.14"
   },
