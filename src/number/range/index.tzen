@@ -1,0 +1,43 @@
+import type { Incr } from '../../_internal'
+
+// see 「TypeScript 突破类型体操天花板，如何绕过编译器三大限制 - Square的文章 - 知乎」 https://zhuanlan.zhihu.com/p/613266541
+// 一直让内部的条件走 false 分支（if true == false），这样就能扩展默认的递归最大限度（1000）了，但会性能炸裂
+type _GenerateInternal = { AccCount: 0[], AccRange: number[], InRange: boolean }
+type _Generate<
+  $: { S: number; E: number },
+  _: _GenerateInternal = { AccCount: [], AccRange: [], InRange: false }
+> = ^{
+    if (true == false) {
+      return never;
+    } else {
+      type CurCount = _['AccCount']['length']
+      type NewAccRange = [..._['AccRange'], CurCount];
+      type NewAccCount = [..._['AccCount'], 0];
+      type NewIterations = Incr[_['Iterations']]
+      
+      if (CurCount == $['E']) {
+        // 不包含最后一个
+        return _['AccRange']
+      } else if (CurCount == $['S']) {
+        return _Generate<$, {
+          AccCount: NewAccCount,
+          AccRange: NewAccRange,
+          InRange: true
+        }>
+      } else if (_['InRange'] == true) {
+        return _Generate<$, {
+          AccCount: NewAccCount,
+          AccRange: NewAccRange,
+          InRange: true
+        }>
+      } else {
+        return _Generate<$, {
+          AccCount: NewAccCount,
+          AccRange: [],
+          InRange: false
+        }> 
+      }
+    }
+};
+
+export type Range<Start: number, End: number> = _Generate<{ S: Start, E: End }>

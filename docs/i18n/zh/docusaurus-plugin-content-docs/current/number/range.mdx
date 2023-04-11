@@ -1,0 +1,25 @@
+---
+slug: /number/range
+title: Range
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+创建一个数字数组，从给定的起始值开始，到但不包括结束值为止。
+
+### 参数
+<ParamTable data={[{"name":"Start","type":"number","description":"数字范围的起始值。"},{"name":"End","type":"number","description":"数字范围的结束值。"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"number[]","description":"数字范围。"}} />
+
+### 示例
+
+```ts
+import type tt from 'type-toolkit';
+
+type Range1 = tt.N.Range<1, 5>; // [1, 2, 3, 4]
+type Range2 = tt.N.Range<1, 1>; // []
+type Range3 = tt.N.Range<55, 60>; // [55, 56, 57, 58, 59]
+```
