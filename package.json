@@ -6,7 +6,8 @@
   "types": "./index.d.ts",
   "files": [
     "dist",
-    "index.d.ts"
+    "index.d.ts",
+    "README.md"
   ],
   "keywords": [
     "typescript",
