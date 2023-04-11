@@ -44,12 +44,12 @@
   "create a new test": {
     "prefix": "testinit",
     "body": [
-      "import { Equal, Checker } from '../../utils.tzen';",
-      "import { ... } from './index.tzen';",
+      "import type { Equal, Checker } from '../../utils.tzen';",
+      "import type { $1 } from './index.tzen';",
       "",
       "type _ = Checker<",
       "  [",
-      "    Equal<..., true>,",
+      "    Equal<true, true>,",
       "  ]",
       ">;",
       ""
