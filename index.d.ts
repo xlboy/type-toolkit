@@ -1,5 +1,5 @@
-import type * as Index from './src';
+import type * as Index from './dist';
 
-export type * from './src';
+export type * from './dist';
 
 export default Index;
