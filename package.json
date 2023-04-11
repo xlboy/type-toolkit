@@ -1,13 +1,14 @@
 {
   "name": "type-toolkit",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "A TypeScript type utility library developed using the TypeZen language",
   "main": "./index.d.ts",
   "types": "./index.d.ts",
   "files": [
     "dist",
     "index.d.ts",
-    "README.md"
+    "README.md",
+    "README.zh.md"
   ],
   "keywords": [
     "typescript",
