@@ -1,0 +1,24 @@
+---
+slug: /string/trim-end
+title: TrimEnd
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+移除字符串右侧的空格
+
+### 参数
+<ParamTable data={[{"name":"Str","type":"string","description":"要被修剪的字符串"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"string","description":"修剪后的字符串"}} />
+
+### 示例
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.TrimEnd<'1 1, 3  '> // '1 1, 3'
+type T1 = tt.S.TrimEnd<'  1  '> // '  1'
+```

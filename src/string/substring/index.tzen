@@ -1,0 +1,57 @@
+import type { GetTailStr, GetHeadStr } from '../_internal.tzen'
+
+type _Get<
+  $: { Start: number, End: number;  },
+  CurIteratedStr: string,
+  AccCount: 0[] = [],
+  CurAccStr: string = '',
+  GreaterThanStartPos: boolean = false
+> = ^{
+  type CurCount = AccCount['length'];
+  type NewAccCount = [...AccCount, 0];
+
+  if (CurIteratedStr == '') {
+    return CurAccStr;
+  } else if (CurCount == $['End']) {
+    if (GreaterThanStartPos == true) {
+      return `${CurAccStr}${GetHeadStr<CurIteratedStr>}`;
+    }
+  }
+  
+  if (CurCount == $['Start']) {
+    return _Get<$, 
+      CurIteratedStr,
+      NewAccCount,
+      CurAccStr,
+      true
+    >;
+  } else if (GreaterThanStartPos == true) {
+    if (CurIteratedStr == `${infer H}${infer R}`) {
+      return _Get<$, 
+        R,
+        NewAccCount,
+        `${CurAccStr}${H}`,
+        true
+      >;
+    }
+  }
+  
+  return _Get<$, GetTailStr<CurIteratedStr>, NewAccCount>;
+}
+
+
+export type Substring<
+  StrSource: string,
+  Start: number,
+  End: number = -1
+> = ^{
+  if (StrSource == '') {
+    return ''
+  }
+  
+  if (Start == End) {
+    return ''
+  }
+  
+  return _Get<{ Start: Start, End: End }, StrSource>;
+}

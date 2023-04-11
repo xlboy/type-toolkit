@@ -1,0 +1,22 @@
+type _Generate<
+  $: { StrSource: string, Count: number },
+  AccCount: 0[] = [], 
+  GeneratedStr: string = ''
+> = ^{
+  type CurCount = AccCount['length']
+  if (CurCount == $['Count']) { return GeneratedStr }
+
+  return _Generate<$, 
+    [...AccCount, 0],
+    `${GeneratedStr}${$['StrSource']}`
+  >
+}
+
+export type Repeat<StrSource: string, Count: number> = ^{
+  for (infer S in StrSource) {
+    if (S == '') { return '' }
+    if (Count == 0 | 1) { return S }
+
+    return _Generate<{ StrSource: S, Count: Count }>
+  }
+}

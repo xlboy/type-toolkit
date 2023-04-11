@@ -1,4 +1,4 @@
-import type { Whitespace } from "../_internal"
+import type { Whitespace } from "../_internal.tzen"
 
 export type TrimEnd<Str: string> = ^{
   if (Str == `${infer L}${Whitespace}`) {

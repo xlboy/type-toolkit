@@ -5,4 +5,6 @@ export type { At } from './at/index.tzen';
 export type { TrimStart } from './trim-start/index.tzen';
 export type { TrimEnd } from './trim-end/index.tzen';
 export type { Trim } from './trim/index.tzen';
-
+export type { Repeat } from './repeat/index.tzen';
+export type { Substring } from './substring/index.tzen';
+export type { IndexOf } from './index-of/index.tzen';

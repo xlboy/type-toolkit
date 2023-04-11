@@ -1,0 +1,45 @@
+import type { GetTailStr } from '../_internal.tzen'
+
+type _Get<
+  $: { SearchStr: string, Position: number },
+  CurStrSource: string,
+  AccCount: 0[] = [],
+  GreaterThanPos: boolean = false
+> = ^{
+  type CurCount = AccCount['length']
+  type NewAccCount = [...AccCount, 0]
+  
+  if (CurStrSource == '') {
+    return -1
+  } else if (GreaterThanPos == true) {
+    // 找到了目标字符串
+    if (CurStrSource == `${$['SearchStr']}${any}`) {
+      return CurCount
+    } else {
+      // 未找到，继续减一个字符后去查找
+      return _Get<$, GetTailStr<CurStrSource>, NewAccCount, true>
+    }
+  }
+  
+  if (CurCount == $['Position']) {
+    return _Get<$, CurStrSource, AccCount, true>
+  }
+
+  // 即没超 pos 位置，也没到 pos 边界，继续减一个字符后去查找
+  return _Get<$, GetTailStr<CurStrSource>, NewAccCount>
+}
+
+export type IndexOf<
+  StrSource: string,
+  SearchStr: string,
+  Position: number = 0
+> = ^{
+  if (SearchStr == '') {
+    return 0
+  }
+
+  return _Get<{
+    SearchStr: SearchStr,
+    Position: Position
+  }, StrSource>
+}

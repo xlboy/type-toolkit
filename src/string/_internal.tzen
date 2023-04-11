@@ -1,5 +1,5 @@
 export type Whitespace =
-	| '\u{9}' // '\t'
+	'\u{9}' // '\t'
 	| '\u{A}' // '\n'
 	| '\u{B}' // '\v'
 	| '\u{C}' // '\f'
@@ -25,3 +25,11 @@ export type Whitespace =
 	| '\u{205F}'
 	| '\u{3000}'
 	| '\u{FEFF}';
+  
+export type ExtractTailStr<S: string> = `${any}${S}`
+export type ExtractHeadStr<S: string> = `${S}${any}`
+
+// 获取除第一个字符外的字符串（尾字符串）
+export type GetTailStr<S: string> = S == ExtractTailStr<infer T> ? T : never
+// 获取首个字符
+export type GetHeadStr<S: string> = S == ExtractHeadStr<infer T> ? T : never

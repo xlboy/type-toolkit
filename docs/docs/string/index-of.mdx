@@ -1,0 +1,26 @@
+---
+slug: /string/index-of
+title: IndexOf
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+Returns the index within the given string of the first occurrence of the specified value, or -1 if not found.
+
+### Parameters
+<ParamTable data={[{"name":"StrSource","type":"string","description":"The string to search in."},{"name":"SearchStr","type":"string","description":"The string to search for."},{"name":"Position","type":"number","default":"0","description":"The index to start the search at. Defaults to 0."}]} />
+
+### Return Value
+<ReturnValue data={{"type":"number","description":"The index of the first occurrence of the specified value, or -1 if not found."}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.IndexOf<'', ''> // 0
+type T1 = tt.S.IndexOf<'', 'a'> // -1
+type T2 = tt.S.IndexOf<'01234', '2'> // 2
+type T3 = tt.S.IndexOf<'01234--01234', '4', 5> // 11
+```

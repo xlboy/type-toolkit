@@ -1,0 +1,26 @@
+---
+slug: /string/index-of
+title: IndexOf
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+返回指定值在字符串中首次出现的索引，如果未找到则返回 -1。
+
+### 参数
+<ParamTable data={[{"name":"StrSource","type":"string","description":"要在其中搜索的字符串。"},{"name":"SearchStr","type":"string","description":"要搜索的字符串。"},{"name":"Position","type":"number","default":"0","description":"搜索的起始索引。默认为 0。"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"number","description":"指定值在字符串中首次出现的索引，如果未找到则返回 -1。"}} />
+
+### 示例
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.IndexOf<'', ''> // 0
+type T1 = tt.S.IndexOf<'', 'a'> // -1
+type T2 = tt.S.IndexOf<'01234', '2'> // 2
+type T3 = tt.S.IndexOf<'01234--01234', '4', 5> // 11
+```

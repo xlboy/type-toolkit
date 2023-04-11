@@ -1,0 +1,25 @@
+---
+slug: /string/substring
+title: Substring
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+Extracts a substring from a string at a specified location
+
+### Parameters
+<ParamTable data={[{"name":"StrSource","type":"string","description":"The string to extract from"},{"name":"Start","type":"number","description":"The index to start extracting from"},{"name":"End","type":"number","default":"-1","description":"The index to stop extracting at, if `-1` then the end of the string is used"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string","description":"The extracted substring"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.Substring<'12345', 1, 3> // '23'
+type T1 = tt.S.Substring<'12345', 1> // '2345'
+type T2 = tt.S.Substring<'12345', 1, 2> // '2'
+```

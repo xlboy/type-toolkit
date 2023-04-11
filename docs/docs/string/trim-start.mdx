@@ -1,0 +1,25 @@
+---
+slug: /string/trim-start
+title: TrimStart
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+
+Remove the spaces at the beginning of the string
+
+### Parameters
+<ParamTable data={[{"name":"Str","type":"string","description":"The string to be trimmed"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string","description":"The trimmed string"}} />
+
+### Example
+
+```ts
+import type tt from 'type-toolkit';
+
+type T0 = tt.S.TrimStart<'  11, 3'> // '11, 3'
+type T1 = tt.S.TrimStart<'     1'> // '1'
+type T2 = tt.S.TrimStart<'  1  '> // '1  '
+```
