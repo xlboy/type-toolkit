@@ -8,20 +8,20 @@
 
 English | [简体中文](./README.zh.md)
 
-A TypeScript type utility library developed using the [TypeZen](https://www.github.com/xlboy/type-zen) language, Target - **"Super rich and excellent user experience"**
+A TypeScript type utility library developed in the [TypeZen](https://www.github.com/xlboy/type-zen) language, aims for - **"Super rich features and an excellent user experience"**
 
 ## Features
 
-- Written using [TypeZen](https://www.github.com/xlboy/type-zen), with internally implemented types that are easy to understand, maintain, and extend
+- Written in [TypeZen](https://www.github.com/xlboy/type-zen), with types that are easy to understand, and it is maintainable and extensible
 
 - Excellent user experience:
 
-  - Document system - **JSDoc, [Online API](https://type-toolkit-docs.vercel.app/)**
-  - Open test cases beside the source file for reference during use
+  - Documents - **JSDoc, [Online API](https://type-toolkit-docs.vercel.app/)**
+  - Use cases are provided for reference
 
-- Abundant API, replicating **Native JS**, `lodash` and others (under development)
+- Abundant APIs that are used like **Vanilla JS**, `lodash` (coming soon)
 
-- Comes with complete test cases to ensure the accuracy of each API
+- High unit test coverage to ensure the accuracy of each API
 
 ## Installation
 
@@ -49,7 +49,7 @@ type T4 = tt.N.Range<0, 10>; // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 - Practice [TypeZen](https://www.github.com/xlboy/type-zen)
 
-- Fill the gap in the market with the positioning of **"very rich & excellent experience"**
+- Fill the gap in the community with the positioning of **"Super rich features & an excellent experience"**
 
 ## Thanks
 
@@ -63,7 +63,7 @@ type T4 = tt.N.Range<0, 10>; // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 Without these excellent projects, this project may not have been born, and I am very grateful to the developers who have silently contributed to these projects. 💛
 
-And friends who have supported me~ 💛
+And thank you to all the friends who have been there for me~ 💛
 
 ## License
 

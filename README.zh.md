@@ -8,7 +8,7 @@
 
 [English](./README.md) | 简体中文
 
-使用 [TypeZen](https://www.github.com/xlboy/type-zen) 语言编写的 TypeScript 类型工具库，定位——**“超级丰富、体验极佳”**
+使用 [TypeZen](https://www.github.com/xlboy/type-zen) 语言编写的 TypeScript 类型工具库，定位——**“功能丰富、体验极佳”**
 
 ## 特性
 
@@ -19,7 +19,7 @@
   - 文档系统——**JSDoc、[在线 API 文档](https://type-toolkit-docs.vercel.app/)**
   - 使用时可查看源码旁的测试用例，方便参考
 
-- 丰富的 API，复刻 **Native JS**、`lodash` 等（开发中）
+- 丰富的 API，复刻 **原生 JS**、`lodash` 等（开发中）
 
 - 完善的测试用例，确保每个 API 的正确性
 
