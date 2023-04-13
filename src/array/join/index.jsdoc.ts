@@ -1,12 +1,12 @@
 /**
  * $$target-slot: Join
  *
- * Join the elements in an array into a string using a specified delimiter.
+ * Adds all the elements of an array into a string, separated by the specified separator string.
  *
- * @param Strings (**ReadonlyArray<string | number>**): The strings to join (numbers/strings)
- * @param Delimiter (**string, default: `''`**): Delimiter to join the strings with
+ * @param Array (**ReadonlyArray<string | number>**): The array to concat (numbers/strings)
+ * @param Separator (**string, default: `''`**): A string separator
  *
- * @returns (**string**): The joined string
+ * @returns (**string**): The concatenated string
  *
  * @example
  * ```ts

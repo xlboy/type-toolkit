@@ -5,7 +5,7 @@ export default {
     title: 'Join'
   },
   description: {
-    en: 'Use the specified delimiter to join the elements of an array into a string',
+    en: 'Adds all the elements of an array into a string, separated by the specified separator string',
     zh: '使用指定的分隔符将数组的元素连接成一个字符串'
   },
   example: `
@@ -17,18 +17,18 @@ type T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
 `,
   params: [
     {
-      name: 'Strings',
+      name: 'Array',
       type: 'ReadonlyArray<string | number>',
       description: {
-        en: 'The string array to join',
-        zh: '要连接的字符串数组'
+        en: 'The array to concat',
+        zh: '要连接的字符串或数字类型的数组'
       }
     },
     {
-      name: 'Delimiter',
+      name: 'Separator',
       type: 'string',
       description: {
-        en: 'The delimiter used to join the strings',
+        en: 'A string separator',
         zh: '用于连接字符串的分隔符'
       },
       default: '""'
@@ -37,7 +37,7 @@ type T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
   return: {
     type: 'string',
     description: {
-      en: 'The joined string',
+      en: 'The concatenated string',
       zh: '连接好的字符串'
     }
   },

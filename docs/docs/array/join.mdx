@@ -6,13 +6,13 @@ title: Join
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
 
-Use the specified delimiter to join the elements of an array into a string
+Adds all the elements of an array into a string, separated by the specified separator string
 
 ### Parameters
-<ParamTable data={[{"name":"Strings","type":"ReadonlyArray<string | number>","description":"The string array to join"},{"name":"Delimiter","type":"string","description":"The delimiter used to join the strings","default":"\"\""}]} />
+<ParamTable data={[{"name":"Array","type":"ReadonlyArray<string | number>","description":"The array to concat"},{"name":"Separator","type":"string","description":"A string separator","default":"\"\""}]} />
 
 ### Return Value
-<ReturnValue data={{"type":"string","description":"The joined string"}} />
+<ReturnValue data={{"type":"string","description":"The concatenated string"}} />
 
 ### Example
 
