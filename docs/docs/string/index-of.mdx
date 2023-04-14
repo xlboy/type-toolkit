@@ -5,6 +5,7 @@ title: IndexOf
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Returns the index within the given string of the first occurrence of the specified value, or -1 if not found.
 
@@ -14,13 +15,7 @@ Returns the index within the given string of the first occurrence of the specifi
 ### Return Value
 <ReturnValue data={{"type":"number","description":"The index of the first occurrence of the specified value, or -1 if not found."}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/index-of/index.tzen"} testFilePath={"string/index-of/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.IndexOf<'', ''> // 0\ntype T1 = tt.S.IndexOf<'', 'a'> // -1\ntype T2 = tt.S.IndexOf<'01234', '2'> // 2\ntype T3 = tt.S.IndexOf<'01234--01234', '4', 5> // 11"} />
 
-type T0 = tt.S.IndexOf<'', ''> // 0
-type T1 = tt.S.IndexOf<'', 'a'> // -1
-type T2 = tt.S.IndexOf<'01234', '2'> // 2
-type T3 = tt.S.IndexOf<'01234--01234', '4', 5> // 11
-```

@@ -5,6 +5,7 @@ title: Replace
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Replace occurrence of a substring in a string
 
@@ -14,11 +15,7 @@ Replace occurrence of a substring in a string
 ### Return Value
 <ReturnValue data={{"type":"string","description":"The replaced string"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/replace/index.tzen"} testFilePath={"string/replace/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Replace<'hello world', 'l', 'L'> // 'heLlo world'\ntype T1 = tt.S.Replace<'hello world', 'l', 'L', { all: true }> // 'heLLo worLd'"} />
 
-type T0 = tt.S.Replace<'hello world', 'l', 'L'> // 'heLlo world'
-type T1 = tt.S.Replace<'hello world', 'l', 'L', { all: true }> // 'heLLo worLd'
-```

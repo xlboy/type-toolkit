@@ -5,6 +5,7 @@ title: At
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Get the character at the specified position
 
@@ -14,11 +15,7 @@ Get the character at the specified position
 ### Return Value
 <ReturnValue data={{"type":"string","description":"The character at the specified position"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/at/index.tzen"} testFilePath={"string/at/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.At<'abc', 1> // 'b'\ntype T1 = tt.S.At<'', 0> // undefined"} />
 
-type T0 = tt.S.At<'abc', 1> // 'b'
-type T1 = tt.S.At<'', 0> // undefined
-```

@@ -5,6 +5,7 @@ title: TrimStart
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Remove the spaces at the beginning of the string
 
@@ -14,12 +15,7 @@ Remove the spaces at the beginning of the string
 ### Return Value
 <ReturnValue data={{"type":"string","description":"The trimmed string"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/trim-start/index.tzen"} testFilePath={"string/trim-start/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.TrimStart<'  11, 3'> // '11, 3'\ntype T1 = tt.S.TrimStart<'     1'> // '1'\ntype T2 = tt.S.TrimStart<'  1  '> // '1  '"} />
 
-type T0 = tt.S.TrimStart<'  11, 3'> // '11, 3'
-type T1 = tt.S.TrimStart<'     1'> // '1'
-type T2 = tt.S.TrimStart<'  1  '> // '1  '
-```

@@ -5,6 +5,7 @@ title: Substring
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Extracts a substring from a string at a specified location
 
@@ -14,12 +15,7 @@ Extracts a substring from a string at a specified location
 ### Return Value
 <ReturnValue data={{"type":"string","description":"The extracted substring"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/substring/index.tzen"} testFilePath={"string/substring/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Substring<'12345', 1, 3> // '23'\ntype T1 = tt.S.Substring<'12345', 1> // '2345'\ntype T2 = tt.S.Substring<'12345', 1, 2> // '2'"} />
 
-type T0 = tt.S.Substring<'12345', 1, 3> // '23'
-type T1 = tt.S.Substring<'12345', 1> // '2345'
-type T2 = tt.S.Substring<'12345', 1, 2> // '2'
-```

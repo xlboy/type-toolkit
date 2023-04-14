@@ -5,6 +5,7 @@ title: Join
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Adds all the elements of an array into a string, separated by the specified separator string
 
@@ -14,12 +15,7 @@ Adds all the elements of an array into a string, separated by the specified sepa
 ### Return Value
 <ReturnValue data={{"type":"string","description":"The concatenated string"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"array/join/index.tzen"} testFilePath={"array/join/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Join<['a', 'b', 'c'], '-'> // 'a-b-c' \ntype T1 = tt.A.Join<['a', 'b', 'c'], '->'> // 'a->b->c'\ntype T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'"} />
 
-type T0 = tt.A.Join<['a', 'b', 'c'], '-'> // 'a-b-c' 
-type T1 = tt.A.Join<['a', 'b', 'c'], '->'> // 'a->b->c'
-type T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
-```

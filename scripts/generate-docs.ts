@@ -4,6 +4,7 @@ import fg from 'fast-glob';
 import fs from 'fs-extra';
 import _jiti from 'jiti';
 import path from 'node:path';
+import * as tz from '@type-zen/core'
 
 // According to the configuration in src `*.docs.ts` to generate documents
 function main() {
@@ -56,7 +57,7 @@ function main() {
     const titleText = {
       params: { zh: '参数', en: 'Parameters' },
       returnValue: { zh: '返回值', en: 'Return Value' },
-      example: { zh: '示例', en: 'Example' }
+      playground: { zh: '游乐场', en: 'Playground' }
     };
 
     const returnValue = docsConfig.return
@@ -73,6 +74,7 @@ title: ${docsConfig.setting.title}
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 ${docsConfig.description[locale]}
 
@@ -82,11 +84,12 @@ ${docsConfig.description[locale]}
 ### ${titleText.returnValue[locale]}
 <ReturnValue data={${JSON.stringify(returnValue)}} />
 
-### ${titleText.example[locale]}
+### ${titleText.playground[locale]}
 
-\`\`\`ts
-${docsConfig.example.trimStart().trimEnd()}
-\`\`\`
+<Playground tzenFilePath={"${docsConfig.sourceFilePath}"} testFilePath={"${
+      docsConfig.testFilePath
+    }"} exampleCode={${JSON.stringify(docsConfig.example.trimStart().trimEnd())}} />
+
 `;
   }
 
@@ -112,4 +115,52 @@ ${docsConfig.example.trimStart().trimEnd()}
   }
 }
 
+// 1. Extract the contents of `.tzen` and `.ts` files in the src directory into JSON format.
+// 2. When extracting `.tzen` files, compile them and then extract the compiled contents into the corresponding `.d.ts` files.
+function generateSourceJSON() {
+  const cwd = process.cwd();
+  const filePaths = fg.sync(['src/**/*.tzen', 'src/**/*.ts'], {
+    cwd,
+    absolute: true,
+    ignore: ['src/**/*.{jsdoc,docs}.ts']
+  });
+  const source: Record</* file-path */ string, /* file-content */ string> = {};
+
+  const sourceJSONFilePath = path.resolve(cwd, './docs/static/source.json');
+
+  fs.ensureFileSync(sourceJSONFilePath);
+
+  filePaths.forEach(filePath => {
+    const relativePathInSrc = path.relative(path.resolve(cwd, 'src'), filePath);
+
+    if (filePath.endsWith('.ts')) {
+      source[relativePathInSrc] = fs.readFileSync(filePath, 'utf-8');
+      return;
+    }
+
+    const tzenFilePath = filePath;
+    const tzenFileContent = fs.readFileSync(tzenFilePath, 'utf-8');
+    source[relativePathInSrc] = tzenFileContent;
+
+    try {
+      const ast = new tz.Parser().parse(tzenFileContent);
+
+      if (ast && ast.length) {
+        const compiledText =
+          '// @ts-nocheck\n\n' + new tz.Compiler().compile(ast).toText();
+
+        source[`${relativePathInSrc}.d.ts`] = compiledText;
+      }
+    } catch (error) {
+      consola.error('Error while parsing file: ' + tzenFilePath);
+      throw error;
+    }
+  });
+
+  fs.writeJSONSync(sourceJSONFilePath, source, { spaces: 2 });
+  consola.success('Generated: ' + colorette.blue(path.relative(cwd, sourceJSONFilePath)));
+  return;
+}
+
 main();
+generateSourceJSON();

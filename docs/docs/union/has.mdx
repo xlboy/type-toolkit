@@ -5,6 +5,7 @@ title: Has
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Check if an element is included in a union type
 
@@ -14,11 +15,7 @@ Check if an element is included in a union type
 ### Return Value
 <ReturnValue data={{"type":"boolean","description":"`true` if `T` is included in `U`, otherwise `false`."}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"union/has/index.tzen"} testFilePath={"union/has/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.U.Has<'1' | '3', '1'>; // true\ntype T1 = tt.U.Has<'1' | '3', '2'>; // false"} />
 
-type T0 = tt.U.Has<'1' | '3', '1'>; // true
-type T1 = tt.U.Has<'1' | '3', '2'>; // false
-```

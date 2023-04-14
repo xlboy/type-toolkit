@@ -12,5 +12,4 @@ export type * as S from './string';
 export type * as Number from './number';
 export type * as N from './number';
 
-
 export type * as Utils from './utils.tzen';

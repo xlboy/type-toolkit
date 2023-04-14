@@ -5,6 +5,7 @@ title: Split
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Split a string into an array by a specified delimiter
 
@@ -14,11 +15,7 @@ Split a string into an array by a specified delimiter
 ### Return Value
 <ReturnValue data={{"type":"string[]","description":"The array of the split string"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/Split/index.tzen"} testFilePath={"string/Split/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Split<'a-b-c', '-'> // ['a', 'b', 'c']\ntype T1 = tt.S.Split<'a->b->c', '->'> // ['a', 'b', 'c']"} />
 
-type T0 = tt.S.Split<'a-b-c', '-'> // ['a', 'b', 'c']
-type T1 = tt.S.Split<'a->b->c', '->'> // ['a', 'b', 'c']
-```

@@ -5,6 +5,7 @@ title: Length
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Get the length of a string
 
@@ -14,11 +15,7 @@ Get the length of a string
 ### Return Value
 <ReturnValue data={{"type":"number","description":"The length of the string"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/length/index.tzen"} testFilePath={"string/length/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Length<'abc'> // 3\ntype T1 = tt.S.Length<''> // 0"} />
 
-type T0 = tt.S.Length<'abc'> // 3
-type T1 = tt.S.Length<''> // 0
-```

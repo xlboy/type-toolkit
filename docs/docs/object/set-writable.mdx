@@ -5,6 +5,7 @@ title: SetWritable
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Set the writable property of the object
 
@@ -14,10 +15,7 @@ Set the writable property of the object
 ### Return Value
 <ReturnValue data={{"type":"object","description":"The object with the writable property set"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"object/set-writable/index.tzen"} testFilePath={"object/set-writable/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T1 = tt.O.SetWritable<{ a: 1, b: 2, readonly c: 3 }, 'c'> // { a: 1, b: 2, c: 3 }"} />
 
-type T1 = tt.O.SetWritable<{ a: 1, b: 2, readonly c: 3 }, 'c'> // { a: 1, b: 2, c: 3 }
-```

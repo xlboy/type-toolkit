@@ -5,6 +5,7 @@ title: Trim
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 移除字符串首尾的空格
 
@@ -14,12 +15,7 @@ import ReturnValue from '@site/src/components/ReturnValue';
 ### 返回值
 <ReturnValue data={{"type":"string","description":"修剪后的字符串"}} />
 
-### 示例
+### 游乐场
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/trim/index.tzen"} testFilePath={"string/trim/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Trim<'  1  '> // '1'\ntype T1 = tt.S.Trim<'  1 2  '> // '1 2'\ntype T2 = tt.S.Trim<'  1 2 3  '> // '1 2 3'"} />
 
-type T0 = tt.S.Trim<'  1  '> // '1'
-type T1 = tt.S.Trim<'  1 2  '> // '1 2'
-type T2 = tt.S.Trim<'  1 2 3  '> // '1 2 3'
-```

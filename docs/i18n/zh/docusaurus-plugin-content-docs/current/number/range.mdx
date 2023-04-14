@@ -5,6 +5,7 @@ title: Range
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 创建一个数字数组，从给定的起始值开始，到但不包括结束值为止。
 
@@ -14,12 +15,7 @@ import ReturnValue from '@site/src/components/ReturnValue';
 ### 返回值
 <ReturnValue data={{"type":"number[]","description":"数字范围。"}} />
 
-### 示例
+### 游乐场
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"number/range/index.tzen"} testFilePath={"number/range/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype Range1 = tt.N.Range<1, 5>; // [1, 2, 3, 4]\ntype Range2 = tt.N.Range<1, 1>; // []\ntype Range3 = tt.N.Range<55, 60>; // [55, 56, 57, 58, 59]"} />
 
-type Range1 = tt.N.Range<1, 5>; // [1, 2, 3, 4]
-type Range2 = tt.N.Range<1, 1>; // []
-type Range3 = tt.N.Range<55, 60>; // [55, 56, 57, 58, 59]
-```

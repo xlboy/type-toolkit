@@ -5,6 +5,7 @@ title: Repeat
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Repeat a string a specified number of times
 
@@ -14,12 +15,7 @@ Repeat a string a specified number of times
 ### Return Value
 <ReturnValue data={{"type":"string","description":"The repeated string"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"string/repeat/index.tzen"} testFilePath={"string/repeat/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Repeat<'-', 3> // '---'\ntype T1 = tt.S.Repeat<'-_-', 3> // '-_--_--_-'\ntype T2 = tt.S.Repeat<'-_-', 0> // '-_-'"} />
 
-type T0 = tt.S.Repeat<'-', 3> // '---'
-type T1 = tt.S.Repeat<'-_-', 3> // '-_--_--_-'
-type T2 = tt.S.Repeat<'-_-', 0> // '-_-'
-```

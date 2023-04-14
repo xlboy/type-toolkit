@@ -5,6 +5,7 @@ title: Pop
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Delete the last element in the array
 
@@ -14,11 +15,7 @@ Delete the last element in the array
 ### Return Value
 <ReturnValue data={{"type":"any[]","description":"The array without the last element"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"array/pop/index.tzen"} testFilePath={"array/pop/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]\ntype T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]"} />
 
-type T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]
-type T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]
-```

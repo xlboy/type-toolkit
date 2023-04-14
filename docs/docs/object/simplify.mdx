@@ -5,6 +5,7 @@ title: Simplify
 
 import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
 
 Flatten computed objects for better preview
 
@@ -14,10 +15,7 @@ Flatten computed objects for better preview
 ### Return Value
 <ReturnValue data={{"type":"object","description":"The simplified object"}} />
 
-### Example
+### Playground
 
-```ts
-import type tt from 'type-toolkit';
+<Playground tzenFilePath={"object/simplify/index.tzen"} testFilePath={"object/simplify/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.O.Simplify<A & B & C> // { ...A, ...B, ...C }"} />
 
-type T0 = tt.O.Simplify<A & B & C> // { ...A, ...B, ...C }
-```
