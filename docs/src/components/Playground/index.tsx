@@ -2,8 +2,8 @@ import { LoadingOutlined } from '@ant-design/icons';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import source from '@site/static/source.json';
 import { useSetState } from 'ahooks';
-import { Segmented, SegmentedProps, Spin } from 'antd';
-import React, { useRef } from 'react';
+import { Button, Col, Row, Segmented, SegmentedProps, Spin, Tag, Tooltip } from 'antd';
+import React, { SVGProps, useRef } from 'react';
 import { Sandbox, SandboxHandle } from './Sandbox';
 import { getOrCreateModel } from './libs/monaco';
 
@@ -16,10 +16,12 @@ interface PlaygroundProps {
 }
 
 type PlaygroundTab = 'example' | 'test-case' | 'source';
+const tsVersion = '5.0.4';
 
 function Playground(props: PlaygroundProps): JSX.Element {
   const [state, setStates] = useSetState({
-    loaded: false
+    loaded: false,
+    currentTab: 'example' as PlaygroundTab
   });
   const sandboxHandle = useRef<SandboxHandle>(null);
   const { i18n } = useDocusaurusContext();
@@ -53,7 +55,8 @@ function Playground(props: PlaygroundProps): JSX.Element {
       const selectedTab = value as PlaygroundTab;
       const sandbox = sandboxHandle.current?.getSandbox();
 
-      changeSanboxModel(selectedTab);
+      setStates({ currentTab: selectedTab });
+      changeSandboxModel(selectedTab);
 
       if (sandbox) {
         sandbox.editor.updateOptions({
@@ -68,23 +71,56 @@ function Playground(props: PlaygroundProps): JSX.Element {
     <div
       style={{
         width: '100%',
-        height: 350,
         marginBottom: 20
       }}
     >
-      <Segmented {...segmentedProps} />
+      <Row justify="space-between">
+        <Col span={12}>
+          <Segmented {...segmentedProps} />
+        </Col>
+        <Col span={12}>
+          <Row justify="end" align="middle" style={{ height: '100%' }}>
+            {state.loaded && (
+              <Tooltip title="Reset">
+                <ResetIcon
+                  style={{ fontSize: 17, cursor: 'pointer' }}
+                  onClick={resetCurrentCode}
+                />
+              </Tooltip>
+            )}
+          </Row>
+        </Col>
+      </Row>
       <Spin
         spinning={!state.loaded}
         indicator={<LoadingOutlined style={{ color: '#258dc1' }} />}
       >
         <div
           style={{
+            position: 'relative',
             height: 300,
             boxShadow: state.loaded ? '0 0 10px 0 rgba(0, 0, 0, 0.3)' : 'none'
           }}
         >
+          {state.loaded && (
+            <Tag
+              bordered={false}
+              color="#258dc1"
+              style={{
+                position: 'absolute',
+                right: 8,
+                bottom: 6,
+                zIndex: 1,
+                opacity: 0.6,
+                pointerEvents: 'none'
+              }}
+            >
+              TS@{tsVersion}
+            </Tag>
+          )}
+
           <Sandbox
-            version="5.0.4"
+            version={tsVersion}
             onReady={() => {
               if (!state.loaded) setStates({ loaded: true });
               initSandboxMonaco();
@@ -96,7 +132,16 @@ function Playground(props: PlaygroundProps): JSX.Element {
     </div>
   );
 
-  function changeSanboxModel(currentTab: PlaygroundTab) {
+  function resetCurrentCode() {
+    const sandbox = sandboxHandle.current?.getSandbox();
+    const { fileContent } = edtiorSource[state.currentTab];
+
+    if (sandbox) {
+      sandbox.setText(fileContent);
+    }
+  }
+
+  function changeSandboxModel(currentTab: PlaygroundTab) {
     const sandbox = sandboxHandle.current?.getSandbox();
     const { filePath, fileContent } = edtiorSource[currentTab];
 
@@ -139,7 +184,30 @@ function Playground(props: PlaygroundProps): JSX.Element {
           );
         });
 
-      changeSanboxModel('example');
+      changeSandboxModel('example');
     }
+  }
+
+  function ResetIcon(props: SVGProps<SVGSVGElement>) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 21 21"
+        {...props}
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3.578 6.487A8 8 0 1 1 2.5 10.5"></path>
+          <path d="M7.5 6.5h-4v-4"></path>
+        </g>
+      </svg>
+    );
   }
 }

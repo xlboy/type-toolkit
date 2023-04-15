@@ -1,3 +1,7 @@
+/**
+ * Source code comes from `https://github.com/HiDeoo/ts-playground-block/blob/main/blocks/components/Sandbox.tsx`
+ */
+
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 
 import { createTwoslashInlayProvider } from './libs/monaco';
@@ -26,7 +30,6 @@ export const Sandbox = forwardRef<SandboxHandle, SandboxProps>(function Sandbox(
       // Changing version without reloading the page like the official Playground requires to reset the module manager.
       const require = window.require as any;
       const ts = (window as any).ts as typeof import('typescript');
-      2;
       require.reset();
 
       require.config({
