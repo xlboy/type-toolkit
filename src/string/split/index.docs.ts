@@ -39,6 +39,6 @@ type T1 = tt.S.Split<'a->b->c', '->'> // ['a', 'b', 'c']
       zh: '拆分后的数组'
     }
   },
-  sourceFilePath: 'string/Split/index.tzen',
-  testFilePath: 'string/Split/index.test.ts'
+  sourceFilePath: 'string/split/index.tzen',
+  testFilePath: 'string/split/index.test.ts'
 } as DocumentConfig;
