@@ -5,8 +5,8 @@ export default {
     title: 'CamelCase'
   },
   description: {
-    en: 'Converts string to camel case',
-    zh: '将字符串转换为驼峰命名法'
+    en: 'Converts string to [camel case](https://en.wikipedia.org/wiki/CamelCase)',
+    zh: '将字符串转换为[驼峰命名法](https://en.wikipedia.org/wiki/CamelCase)'
   },
   example: `
 import type tt from 'type-toolkit';

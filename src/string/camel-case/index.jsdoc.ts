@@ -1,7 +1,7 @@
 /**
  * $$target-slot: CamelCase
  *
- * Converts string to camel case
+ * Converts string to [camel case](https://en.wikipedia.org/wiki/CamelCase)
  *
  * @param Str (**string**): String to convert
  *
