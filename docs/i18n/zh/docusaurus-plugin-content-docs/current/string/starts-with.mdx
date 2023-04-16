@@ -1,0 +1,21 @@
+---
+slug: /string/starts-with
+title: StartsWith
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+检查字符串是否以指定字符串开头
+
+### 参数
+<ParamTable data={[{"name":"Str","type":"string","description":"待检查的字符串"},{"name":"Target","type":"string","description":"待查找的目标字符串"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"boolean","description":"如果字符串以 `target` 开头，则返回 `true`，否则返回 `false`"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"string/starts-with/index.tzen"} testFilePath={"string/starts-with/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.S.StartsWith<'123-', '1'> // true\n//    ^?\ntype T1 = tt.S.StartsWith<'123-', '12'> // true\n//    ^?\ntype T2 = tt.S.StartsWith<'123-', '1-'> // false\n//    ^?\ntype T3 = tt.S.StartsWith<'123-', '2'> // false\n//    ^?"} />
+

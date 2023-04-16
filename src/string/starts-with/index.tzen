@@ -1,0 +1,1 @@
+export type StartsWith<Str: string, Target: string> = Str == `${Target}${any}` ? true : false

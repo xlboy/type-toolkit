@@ -1,0 +1,21 @@
+---
+slug: /string/starts-with
+title: StartsWith
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Checks if string starts with the given target string
+
+### Parameters
+<ParamTable data={[{"name":"Str","type":"string","description":"The string to inspect."},{"name":"Target","type":"string","description":"The string to search for"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"boolean","description":"Returns `true` if string starts with `target`, else `false`"}} />
+
+### Playground
+
+<Playground tzenFilePath={"string/starts-with/index.tzen"} testFilePath={"string/starts-with/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.S.StartsWith<'123-', '1'> // true\n//    ^?\ntype T1 = tt.S.StartsWith<'123-', '12'> // true\n//    ^?\ntype T2 = tt.S.StartsWith<'123-', '1-'> // false\n//    ^?\ntype T3 = tt.S.StartsWith<'123-', '2'> // false\n//    ^?"} />
+
