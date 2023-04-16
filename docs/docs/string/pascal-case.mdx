@@ -1,0 +1,21 @@
+---
+slug: /string/pascal-case
+title: PascalCase
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Converts string to [pascal case](https://en.wikipedia.org/wiki/PascalCase)
+
+### Parameters
+<ParamTable data={[{"name":"Str","type":"string","description":"The string to convert"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string","description":"The pascal cased string"}} />
+
+### Playground
+
+<Playground tzenFilePath={"string/pascal-case/index.tzen"} testFilePath={"string/pascal-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.PascalCase<'hello, world123'> // 'HelloWorld123'\n//    ^?\ntype T1 = tt.S.PascalCase<'Foo Bar'> // 'FooBar'\n//    ^?\ntype T3 = tt.S.PascalCase<'--foo-bar--'> // 'FooBar'\n//    ^?\ntype T4 = tt.S.PascalCase<'__FOO_BAR__'> // 'FooBar'\n//    ^?"} />
+
