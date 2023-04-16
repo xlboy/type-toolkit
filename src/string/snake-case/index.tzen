@@ -1,0 +1,14 @@
+import type { SplitWords } from '../split-words/index.tzen'
+
+type _Handle<
+  Words: string[],
+  Output: string = '',
+> = ^{
+  if (Words == [infer F, ...infer R]) {
+    return _Handle<R, Output == '' ? Lowercase<F> : `${Output}_${Lowercase<F>}`>
+  } else {
+    return Output
+  }
+}
+
+export type SnakeCase<Str: string> = _Handle<SplitWords<Str>>

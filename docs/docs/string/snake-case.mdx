@@ -1,0 +1,21 @@
+---
+slug: /string/snake-case
+title: SnakeCase
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Converts string to [snake case](https://en.wikipedia.org/wiki/Letter_case#Snake_case)
+
+### Parameters
+<ParamTable data={[{"name":"Str","type":"string","description":"String to convert"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string","description":"The snake cased string"}} />
+
+### Playground
+
+<Playground tzenFilePath={"string/snake-case/index.tzen"} testFilePath={"string/snake-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.S.SnakeCase<'hello, world'> // 'hello_world'\n//    ^?\ntype T1 = tt.S.SnakeCase<'foo bar'> // 'foo_bar'\n//    ^?\ntype T2 = tt.S.SnakeCase<'fooBar'> // 'foo_bar'\n//    ^?\ntype T3 = tt.S.SnakeCase<'__FOO_BAR__'> // 'foo_bar'\n//    ^?"} />
+

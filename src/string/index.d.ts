@@ -14,3 +14,4 @@ export type { SplitWords } from './split-words/index.tzen';
 export type { CamelCase } from './camel-case/index.tzen';
 export type { PascalCase } from './pascal-case/index.tzen';
 export type { KebabCase } from './kebab-case/index.tzen';
+export type { SnakeCase } from './snake-case/index.tzen';
