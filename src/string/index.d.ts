@@ -8,3 +8,6 @@ export type { Trim } from './trim/index.tzen';
 export type { Repeat } from './repeat/index.tzen';
 export type { Substring } from './substring/index.tzen';
 export type { IndexOf } from './index-of/index.tzen';
+export type { StartsWith } from './starts-with/index.tzen';
+export type { EndsWith } from './ends-with/index.tzen';
+export type { SplitWords } from './split-words/index.tzen';

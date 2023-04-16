@@ -1,0 +1,50 @@
+import type { AlphaLowerCaseChars, AlphaUppercaseChars, NumberChars } from '../_internal.tzen'
+
+type _Handle<
+  CurStr: string,
+  Output: string[] = [],
+  CurAccWord: string = '',
+  CurWordMode: 'lower' | 'upper' | 'number' | 'other' = 'other'
+> = ^{
+  type GetCurWordMode<CurChar: string> = ^{
+    if (CurChar == AlphaLowerCaseChars) { return 'lower' }
+    else if (CurChar == AlphaUppercaseChars) { return 'upper' }
+    else if (CurChar == NumberChars) { return 'number' }
+    else { return 'other' }
+  }
+
+  if (CurStr == '') {
+    return CurAccWord == '' ? Output : [...Output, CurAccWord]
+  }
+  else {
+    if (CurStr == `${infer F}${infer R}`) {
+      type CurCharMode = GetCurWordMode<F>
+
+      if (CurWordMode == 'other') {
+        if (CurCharMode == 'other') {
+          return _Handle<R, Output>
+        } else {
+          return _Handle<R, Output, F, CurCharMode>
+        }
+      }
+     
+      if (CurCharMode == CurWordMode) {
+        return _Handle<R, Output, `${CurAccWord}${F}`, CurWordMode>
+      } else if (CurCharMode == 'other') {
+        return _Handle<R, [...Output, CurAccWord]>
+      } 
+      // 处理 Word 这类单词首字母为大写的特殊情况
+      else if (CurWordMode == 'upper') {
+        // `Wo`
+        if (CurCharMode == 'lower') {
+          return _Handle<R, Output, `${CurAccWord}${F}`, 'lower'>
+        }
+      }
+
+      return _Handle<R, [...Output, CurAccWord], F, CurCharMode>
+    }
+  }
+}
+  
+
+export type SplitWords<Str: string> = _Handle<Str>
