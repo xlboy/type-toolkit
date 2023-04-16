@@ -1,0 +1,1 @@
+export type EndsWith<Str: string, Target: string> = Str == `${any}${Target}` ? true : false

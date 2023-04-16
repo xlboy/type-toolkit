@@ -1,0 +1,21 @@
+---
+slug: /string/ends-with
+title: EndWith
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+检查字符串是否以指定的目标字符串结尾。
+
+### 参数
+<ParamTable data={[{"name":"Str","type":"string","description":"要检查的字符串。"},{"name":"Target","type":"string","description":"要搜索的字符串。"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"boolean","description":"如果字符串以`target`结尾，则返回`true`，否则返回`false`。"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"string/ends-with/index.tzen"} testFilePath={"string/ends-with/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.EndsWith<'123-', '3-'> // true\n//   ^?\ntype T1 = tt.S.EndsWith<'123-', '-'> // true\n//   ^?\ntype T2 = tt.S.EndsWith<'123-', '3'> // false\n//   ^?"} />
+
