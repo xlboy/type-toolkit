@@ -13,3 +13,4 @@ export type { EndsWith } from './ends-with/index.tzen';
 export type { SplitWords } from './split-words/index.tzen';
 export type { CamelCase } from './camel-case/index.tzen';
 export type { PascalCase } from './pascal-case/index.tzen';
+export type { KebabCase } from './kebab-case/index.tzen';

@@ -1,0 +1,21 @@
+---
+slug: /string/kebab-case
+title: KebabCase
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+将字符串转换为[短横线命名法](https://en.wikipedia.org/wiki/Letter_case#Kebab_case)
+
+### 参数
+<ParamTable data={[{"name":"Str","type":"string","description":"要转换的字符串"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"string","description":"短横线命名法的字符串"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"string/kebab-case/index.tzen"} testFilePath={"string/kebab-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.KebabCase<'hello, world'> // 'hello-world'\n//    ^?\ntype T1 = tt.S.KebabCase<'foo bar'> // 'foo-bar'\n//    ^?\ntype T2 = tt.S.KebabCase<'fooBar'> // 'foo-bar'\n//    ^?\ntype T3 = tt.S.KebabCase<'__FOO_BAR__'> // 'foo-bar'\n//    ^?"} />
+

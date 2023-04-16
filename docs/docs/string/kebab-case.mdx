@@ -1,0 +1,21 @@
+---
+slug: /string/kebab-case
+title: KebabCase
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Converts string to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case)
+
+### Parameters
+<ParamTable data={[{"name":"Str","type":"string","description":"The string to convert"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"string","description":"The kebab cased string"}} />
+
+### Playground
+
+<Playground tzenFilePath={"string/kebab-case/index.tzen"} testFilePath={"string/kebab-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.KebabCase<'hello, world'> // 'hello-world'\n//    ^?\ntype T1 = tt.S.KebabCase<'foo bar'> // 'foo-bar'\n//    ^?\ntype T2 = tt.S.KebabCase<'fooBar'> // 'foo-bar'\n//    ^?\ntype T3 = tt.S.KebabCase<'__FOO_BAR__'> // 'foo-bar'\n//    ^?"} />
+
