@@ -11,3 +11,4 @@ export type { IndexOf } from './index-of/index.tzen';
 export type { StartsWith } from './starts-with/index.tzen';
 export type { EndsWith } from './ends-with/index.tzen';
 export type { SplitWords } from './split-words/index.tzen';
+export type { CamelCase } from './camel-case/index.tzen';

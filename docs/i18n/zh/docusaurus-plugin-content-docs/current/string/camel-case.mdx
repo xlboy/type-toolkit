@@ -1,0 +1,21 @@
+---
+slug: /string/camel-case
+title: CamelCase
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+将字符串转换为驼峰命名法
+
+### 参数
+<ParamTable data={[{"name":"Str","type":"string","description":"要转换的字符串"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"string","description":"驼峰命名的字符串"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"string/camel-case/index.tzen"} testFilePath={"string/camel-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.CamelCase<'hello, world123'> // 'helloWorld123'\n//    ^?\ntype T1 = tt.S.CamelCase<'Foo Bar'> // 'fooBar'\n//    ^?\ntype T3 = tt.S.CamelCase<'--foo-bar--'> // 'fooBar'\n//    ^?\ntype T4 = tt.S.CamelCase<'__FOO_BAR__'> // 'fooBar'\n//    ^?"} />
+

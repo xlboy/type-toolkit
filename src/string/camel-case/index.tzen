@@ -1,0 +1,19 @@
+import type { SplitWords } from '../split-words/index.tzen'
+
+type _Handle<
+  Words: string[],
+  Output: string = '',
+  IsFirst: boolean = true
+> = ^{
+  if (Words == [infer F, ...infer R]) {
+    if (IsFirst == true) {
+      return _Handle<R, Uncapitalize<Lowercase<F>>, false>
+    } else {
+      return _Handle<R, `${Output}${Capitalize<Lowercase<F>>}`, false>
+    }
+  } else {
+    return Output
+  }
+}
+
+export type CamelCase<Str: string> = _Handle<SplitWords<Str>>
