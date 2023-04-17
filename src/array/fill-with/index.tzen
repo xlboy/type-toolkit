@@ -1,0 +1,12 @@
+type _Handle<
+  $: { Element: any, Length: number },
+  Output: Array<any> = []
+> = ^{
+  if (Output['length'] == $['Length']) {
+    return Output
+  } else {
+    return _Handle<$, [...Output, $['Element']]>
+  }
+}
+
+export type FillWith<Element, Length: number> = _Handle<{ Element: Element, Length: Length }>

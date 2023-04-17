@@ -1,0 +1,21 @@
+---
+slug: /array/fill-with
+title: FillWith
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Fill an array with a specific value
+
+### Parameters
+<ParamTable data={[{"name":"Element","description":"The value to fill"},{"name":"Length","description":"The length to fill"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"Array<any>","description":"The filled array"}} />
+
+### Playground
+
+<Playground tzenFilePath={"array/fill-with/index.tzen"} testFilePath={"array/fill-with/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.FillWith<'a', 3>; // ['a', 'a', 'a']\n//    ^?\ntype T1 = tt.A.FillWith<1, 3>; // [1, 1, 1]\n//    ^?\ntype T2 = tt.A.FillWith<true, 3>; // [true, true, true]\n//    ^?"} />
+
