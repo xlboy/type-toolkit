@@ -1,0 +1,21 @@
+---
+slug: /array/concat
+title: Concat
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Connect two arrays together, return a new array
+
+### Parameters
+<ParamTable data={[{"name":"Arr1","type":"Array<any>","description":"The first array"},{"name":"Arr2","type":"Array<any>","description":"The second array"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"Array<any>","description":"The new array after connection"}} />
+
+### Playground
+
+<Playground tzenFilePath={"array/concat/index.tzen"} testFilePath={"array/concat/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]\n//    ^?\ntype T1 = tt.A.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]\n//    ^?"} />
+

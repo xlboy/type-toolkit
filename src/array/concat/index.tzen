@@ -1,0 +1,1 @@
+export type Concat<Arr1: Array<any>, Arr2: Array<any>> = [...Arr1, ...Arr2]

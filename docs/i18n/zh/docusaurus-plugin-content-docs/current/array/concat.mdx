@@ -1,0 +1,21 @@
+---
+slug: /array/concat
+title: Concat
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+连接两个数组并返回一个新数组
+
+### 参数
+<ParamTable data={[{"name":"Arr1","type":"Array<any>","description":"第一个数组"},{"name":"Arr2","type":"Array<any>","description":"第二个数组"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"Array<any>","description":"连接后的新数组"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"array/concat/index.tzen"} testFilePath={"array/concat/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]\n//    ^?\ntype T1 = tt.A.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]\n//    ^?"} />
+
