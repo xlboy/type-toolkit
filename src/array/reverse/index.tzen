@@ -1,0 +1,9 @@
+type _Handle<CurArr: Array<any>, Output: Array<any> = []> = ^{
+  if (CurArr == [infer H, ...infer T]) {
+    return _Handle<T, [H, ...Output]>
+  } else {
+    return Output
+  }
+}
+
+export type Reverse<Arr: Array<any>>  = _Handle<Arr>

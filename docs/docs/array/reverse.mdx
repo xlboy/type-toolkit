@@ -1,0 +1,21 @@
+---
+slug: /array/reverse
+title: Reverse
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Reverse array
+
+### Parameters
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"Array to reverse"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"Array<any>","description":"Reversed array"}} />
+
+### Playground
+
+<Playground tzenFilePath={"array/reverse/index.tzen"} testFilePath={"array/reverse/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Reverse<[1, 2, 3]> // [3, 2, 1]\n//    ^?\ntype T1 = tt.A.Reverse<[1, '2', 3]> // [3, '2', 1]\n//    ^?"} />
+
