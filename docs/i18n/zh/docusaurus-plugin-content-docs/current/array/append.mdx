@@ -1,0 +1,21 @@
+---
+slug: /array/append
+title: Append
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+将指定元素添加到数组的末尾
+
+### 参数
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"要添加到的数组"},{"name":"Element","description":"要添加的元素"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"Array<any>","description":"添加元素后的数组"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"array/append/index.tzen"} testFilePath={"array/append/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Append<[], 1> // [1]\n//    ^?\ntype T1 = tt.A.Append<[1], string> // [1, string]\n//    ^?\ntype T2 = tt.A.Append<string[], { a: 1 }> // [...string[], { a: 1 }]\n//    ^?"} />
+

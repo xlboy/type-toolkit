@@ -1,0 +1,21 @@
+---
+slug: /array/append
+title: Append
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Add the specified element to the end of the array
+
+### Parameters
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"The array to be added to"},{"name":"Element","description":"The element to be added"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"Array<any>","description":"The array after adding the element"}} />
+
+### Playground
+
+<Playground tzenFilePath={"array/append/index.tzen"} testFilePath={"array/append/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Append<[], 1> // [1]\n//    ^?\ntype T1 = tt.A.Append<[1], string> // [1, string]\n//    ^?\ntype T2 = tt.A.Append<string[], { a: 1 }> // [...string[], { a: 1 }]\n//    ^?"} />
+

@@ -1,0 +1,1 @@
+export type Append<Arr: Array<any>, Element> = [...Arr, Element];
