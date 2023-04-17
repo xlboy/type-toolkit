@@ -1,0 +1,21 @@
+---
+slug: /array/slice
+title: Slice
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Extracts a section of an array
+
+### Parameters
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"The array to extract from"},{"name":"Start","type":"number","description":"The beginning index of the specified portion of the array"},{"name":"End","type":"number","description":"The end index of the specified portion of the array"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"Array<any>","description":"The extracted array"}} />
+
+### Playground
+
+<Playground tzenFilePath={"array/slice/index.tzen"} testFilePath={"array/slice/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Slice<[1, 2, 3, 4, 5], 1, 3> // [2, 3]\n//    ^?\ntype T1 = tt.A.Slice<[1, 2, 3, 4, 5], 1, 10> // [2, 3, 4, 5]\n//    ^?\ntype T2 = tt.A.Slice<[1, 2, 3, 4, 5], 10, 10> // []\n//    ^?"} />
+

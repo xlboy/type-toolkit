@@ -1,0 +1,21 @@
+---
+slug: /array/slice
+title: Slice
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+提取数组的一部分
+
+### 参数
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"要提取的数组"},{"name":"Start","type":"number","description":"要提取的数组部分的开始位置"},{"name":"End","type":"number","description":"要提取的数组部分的结束位置"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"Array<any>","description":"提取出的数组"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"array/slice/index.tzen"} testFilePath={"array/slice/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Slice<[1, 2, 3, 4, 5], 1, 3> // [2, 3]\n//    ^?\ntype T1 = tt.A.Slice<[1, 2, 3, 4, 5], 1, 10> // [2, 3, 4, 5]\n//    ^?\ntype T2 = tt.A.Slice<[1, 2, 3, 4, 5], 10, 10> // []\n//    ^?"} />
+

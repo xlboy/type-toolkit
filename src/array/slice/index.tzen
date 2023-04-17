@@ -1,0 +1,20 @@
+import type { Range } from '../../number'
+
+type _Handle<
+  $: { Arr: Array<any> },
+  ArrRange: number[],
+  Output: Array<any> = [],
+> = ^{
+  if (ArrRange == [infer CurIndex, ...infer NextArrRange]) {
+    if (CurIndex == $['Arr']['length']) {
+      return Output
+    } else {
+      return _Handle<$, NextArrRange, [...Output, $['Arr'][CurIndex]]>
+    }
+  } else {
+    return Output
+  }
+}
+
+
+export type Slice<Arr: Array<any>, Start: number, End: number> = _Handle<{ Arr: Arr }, Range<Start, End>>
