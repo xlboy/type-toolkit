@@ -1,0 +1,21 @@
+---
+slug: /array/chunk
+title: Chunk
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Split an array into multiple arrays of specified size
+
+### Parameters
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"The array to split"},{"name":"Size","type":"number","description":"The size of each chunk"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"Array<Array<any>>","description":"Returns the new array of chunks"}} />
+
+### Playground
+
+<Playground tzenFilePath={"array/chunk/index.tzen"} testFilePath={"array/chunk/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.A.Chunk<[], 1> // []\n//    ^?\ntype T1 = tt.A.Chunk<[1, 2, 3, 4], 1> // [[1], [2], [3], [4]]\n//    ^?\ntype T2 = tt.A.Chunk<[1, 2, 3, 4], 2> // [[1, 2], [3, 4]]\n//    ^?\ntype T3 = tt.A.Chunk<[1, 2, 3, 4], 3> // [[1, 2, 3], [4]]\n//    ^?"} />
+

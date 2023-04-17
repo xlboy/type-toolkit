@@ -1,0 +1,18 @@
+type _Handle<
+  $: { Size: number },
+  ChunkSource: Array<any>,
+  CurChunk: Array<any> = [],
+  Output: Array<Array<any>> = []
+> = ^{
+  if (ChunkSource == [infer H, ...infer T]) {
+    if (CurChunk['length'] == $['Size']) {
+      return _Handle<$, T, [H], [...Output, CurChunk]>
+    } else {
+      return _Handle<$, T, [...CurChunk, H], Output>
+    }
+  } else {
+    return CurChunk['length'] == 0 ? Output : [...Output, CurChunk]
+  }
+}  
+
+export type Chunk<Arr: Array<any>, Size: number> = _Handle<{ Size: Size }, Arr>
