@@ -8,3 +8,4 @@ export type { Slice } from './slice/index.tzen';
 export type { Chunk } from './chunk/index.tzen';
 export type { Reverse } from './reverse/index.tzen';
 export type { Last } from './last/index.tzen';
+export type { Head } from './head/index.tzen';

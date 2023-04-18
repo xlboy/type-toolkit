@@ -1,0 +1,1 @@
+export type Head<Arr: Array<any>> = Arr['length'] == 0 ? never : Arr[0];

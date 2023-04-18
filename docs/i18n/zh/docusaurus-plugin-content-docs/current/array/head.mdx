@@ -1,0 +1,21 @@
+---
+slug: /array/head
+title: Head
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+获取数组的第一个元素
+
+### 参数
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"要获取第一个元素的数组"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"any","description":"数组的第一个元素"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"array/head/index.tzen"} testFilePath={"array/head/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Head<[1, 2, 3]> // 1\n//    ^?\ntype T1 = tt.A.Head<['1', 2]> // '1'\n//    ^?\ntype T2 = tt.A.Head<number[]> // number\n//    ^?"} />
+
