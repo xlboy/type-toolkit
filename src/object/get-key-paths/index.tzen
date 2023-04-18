@@ -1,0 +1,63 @@
+import type * as A from '../../array'
+
+type _ToArray<
+  O: object, 
+  Output: Array<Array<string>> = []
+> = ^{
+  type OKeys = O == Array<any> ? Exclude<keyof O, keyof []> : keyof O;
+
+  for (infer K in OKeys) {
+    type FilteredK = K == `${infer V extends number}` ? V : K;
+    type NewOutput = Output['length'] == 0 ? [[FilteredK]] : [...Output, [...A.Last<Output>, FilteredK]];
+
+    if (O[K] == object) {
+      return _ToArray<O[K], NewOutput>;
+    } else {
+      return NewOutput;
+    }
+  }
+}
+
+type _ToString<
+  O: object,
+  Output: Array<string> = []
+> = ^{
+  type OKeys = O == Array<any> ? Exclude<keyof O, keyof []> : keyof O;
+
+  for (infer K in OKeys) {
+    type CurPath = ^ {
+      type LastPath = Output['length'] == 0 ? '' : A.Last<Output>;
+
+      if (K == `${number}`) {
+        return `${LastPath}[${K}]`;
+      } else {
+        return LastPath == '' ? K : `${LastPath}.${K}`
+      }
+    }
+
+    if (O[K] == object) {
+      return _ToString<O[K], [...Output, CurPath]>;
+    } else {
+      return [...Output, CurPath];
+    }
+  }
+}
+
+interface _Options {
+  /**
+   * The mode of the returned key paths.
+   * @default 'array'
+   */
+  mode: 'array' | 'string';
+}
+
+export type GetKeyPaths<
+  O: object,
+  Options: _Options = { mode: 'array' }
+> = ^{
+  if (Options['mode'] == 'array') {
+    return _ToArray<O>[number];
+  } else {
+    return _ToString<O>[number]
+  }
+}

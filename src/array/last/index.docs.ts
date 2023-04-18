@@ -39,4 +39,4 @@ type T3 = tt.A.Last<[true, false, true, false, true, false]> // false
   },
   sourceFilePath: 'array/last/index.tzen',
   testFilePath: 'array/last/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;
