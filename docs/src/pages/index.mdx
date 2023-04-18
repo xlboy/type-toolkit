@@ -13,10 +13,10 @@ npm install type-toolkit -D
 ```typescript
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.Repeat<'a', 3>; // 'aaa'
-type T1 = tt.S.Split<'a-b-c', '-'>; // ['a', 'b', 'c']
-type T2 = tt.S.Substring<'0123456789', 3, 5>; // '34'
-type T3 = tt.S.Trim<'  abc  '>; // 'abc'
-type T4 = tt.N.Range<0, 10>; // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+type T0 = tt.String.Repeat<'a', 3>; // 'aaa'
+type T1 = tt.String.Split<'a-b-c', '-'>; // ['a', 'b', 'c']
+type T2 = tt.String.Substring<'0123456789', 3, 5>; // '34'
+type T3 = tt.String.Trim<'  abc  '>; // 'abc'
+type T4 = tt.Number.Range<0, 10>; // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
