@@ -1,0 +1,1 @@
+export type Last<Arr: Array<any>> = Arr == [...any, infer Last] ? Last : never;

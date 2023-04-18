@@ -1,0 +1,21 @@
+---
+slug: /array/last
+title: Last
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+返回数组的最后一个元素
+
+### 参数
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"要查询的数组"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"any","description":"返回 `Arr` 的最后一个元素"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"array/last/index.tzen"} testFilePath={"array/last/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Last<[1, 2, 3]> // 3\n//    ^?\ntype T1 = tt.A.Last<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]> // 10\n//    ^?\ntype T2 = tt.A.Last<[1, 2, 'g', 'h', 'i', 'x', 'y', 'z']> // 'z'\n//    ^?\ntype T3 = tt.A.Last<[true, false, true, false, true, false]> // false\n//    ^?"} />
+
