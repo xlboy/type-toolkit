@@ -13,9 +13,9 @@ Splits string into an array of its words
 <ParamTable data={[{"name":"Str","type":"string","description":"The string to inspect"}]} />
 
 ### Return Value
-<ReturnValue data={{"type":"string[]","description":"Returns the words of `Str`"}} />
+<ReturnValue data={{"type":"string[]","description":"The array of words"}} />
 
 ### Playground
 
-<Playground tzenFilePath={"string/split-words/index.tzen"} testFilePath={"string/split-words/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.SplitWords<'fred, barney, & pebbles'> // ['fred', 'barney', 'pebbles']\n//    ^?\ntype T1 = tt.S.SplitWords<'helloWORLD, hi, 111'>  // ['hello', 'WORLD', 'hi', '111']\n//    ^?"} />
+<Playground tzenFilePath={"string/split-words/index.tzen"} testFilePath={"string/split-words/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.SplitWords<'fred, barney, & pebbles'> // ['fred', 'barney', 'pebbles']\n//    ^?\ntype T1 = tt.String.SplitWords<'helloWORLD, hi, 111'>  // ['hello', 'WORLD', 'hi', '111']\n//    ^?"} />
 

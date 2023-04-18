@@ -11,8 +11,8 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.S.Length<'abc'> // 3
- * type T1 = tt.S.Length<''> // 0
+ * type T0 = tt.String.Length<'abc'> // 3
+ * type T1 = tt.String.Length<''> // 0
  * ```
  */
 type Preview182 = 1;

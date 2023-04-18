@@ -11,9 +11,9 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.SplitWords<'fred, barney, & pebbles'> // ['fred', 'barney', 'pebbles']
+type T0 = tt.String.SplitWords<'fred, barney, & pebbles'> // ['fred', 'barney', 'pebbles']
 //    ^?
-type T1 = tt.S.SplitWords<'helloWORLD, hi, 111'>  // ['hello', 'WORLD', 'hi', '111']
+type T1 = tt.String.SplitWords<'helloWORLD, hi, 111'>  // ['hello', 'WORLD', 'hi', '111']
 //    ^?
 `,
   params: [
@@ -29,10 +29,10 @@ type T1 = tt.S.SplitWords<'helloWORLD, hi, 111'>  // ['hello', 'WORLD', 'hi', '1
   return: {
     type: 'string[]',
     description: {
-      en: 'Returns the words of `Str`',
-      zh: '返回字符串`Str`的单词数组'
+      en: 'The array of words',
+      zh: '分割后的单词数组'
     }
   },
   sourceFilePath: 'string/split-words/index.tzen',
   testFilePath: 'string/split-words/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

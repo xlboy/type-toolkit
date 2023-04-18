@@ -11,13 +11,13 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.CamelCase<'hello, world123'> // 'helloWorld123'
+type T0 = tt.String.CamelCase<'hello, world123'> // 'helloWorld123'
 //    ^?
-type T1 = tt.S.CamelCase<'Foo Bar'> // 'fooBar'
+type T1 = tt.String.CamelCase<'Foo Bar'> // 'fooBar'
 //    ^?
-type T3 = tt.S.CamelCase<'--foo-bar--'> // 'fooBar'
+type T3 = tt.String.CamelCase<'--foo-bar--'> // 'fooBar'
 //    ^?
-type T4 = tt.S.CamelCase<'__FOO_BAR__'> // 'fooBar'
+type T4 = tt.String.CamelCase<'__FOO_BAR__'> // 'fooBar'
 //    ^?
 `,
   params: [
@@ -39,4 +39,4 @@ type T4 = tt.S.CamelCase<'__FOO_BAR__'> // 'fooBar'
   },
   sourceFilePath: 'string/camel-case/index.tzen',
   testFilePath: 'string/camel-case/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

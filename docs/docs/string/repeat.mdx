@@ -17,5 +17,5 @@ Repeat a string a specified number of times
 
 ### Playground
 
-<Playground tzenFilePath={"string/repeat/index.tzen"} testFilePath={"string/repeat/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Repeat<'-', 3> // '---'\ntype T1 = tt.S.Repeat<'-_-', 3> // '-_--_--_-'\ntype T2 = tt.S.Repeat<'-_-', 0> // '-_-'"} />
+<Playground tzenFilePath={"string/repeat/index.tzen"} testFilePath={"string/repeat/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.Repeat<'-', 3> // '---'\n//    ^?\ntype T1 = tt.String.Repeat<'-_-', 3> // '-_--_--_-'\n//    ^?\ntype T2 = tt.String.Repeat<'-_-', 0> // '-_-'\n//    ^?"} />
 

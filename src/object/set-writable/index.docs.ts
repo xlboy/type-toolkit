@@ -11,7 +11,8 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T1 = tt.O.SetWritable<{ a: 1, b: 2, readonly c: 3 }, 'c'> // { a: 1, b: 2, c: 3 }
+type T1 = tt.Object.SetWritable<{ a: 1, b: 2, readonly c: 3 }, 'c'> // { a: 1, b: 2, c: 3 }
+//    ^?
 `,
   params: [
     {

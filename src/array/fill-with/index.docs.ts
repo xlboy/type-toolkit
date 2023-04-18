@@ -11,11 +11,11 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.A.FillWith<'a', 3>; // ['a', 'a', 'a']
+type T0 = tt.Array.FillWith<'a', 3>; // ['a', 'a', 'a']
 //    ^?
-type T1 = tt.A.FillWith<1, 3>; // [1, 1, 1]
+type T1 = tt.Array.FillWith<1, 3>; // [1, 1, 1]
 //    ^?
-type T2 = tt.A.FillWith<true, 3>; // [true, true, true]
+type T2 = tt.Array.FillWith<true, 3>; // [true, true, true]
 //    ^?
 `,
   params: [
@@ -43,4 +43,4 @@ type T2 = tt.A.FillWith<true, 3>; // [true, true, true]
   },
   sourceFilePath: 'array/fill-with/index.tzen',
   testFilePath: 'array/fill-with/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

@@ -5,19 +5,19 @@ export default {
     title: 'Last'
   },
   description: {
-    en: 'Returns the last element of an array',
-    zh: '返回数组的最后一个元素'
+    en: 'Gets the last element of an array',
+    zh: '获取数组的最后一个元素'
   },
   example: `
-import type tt from 'type-toolkit';
+import type tt from 'type-toolkit'
 
-type T0 = tt.A.Last<[1, 2, 3]> // 3
+type T0 = tt.Array.Last<[1, 2, 3]> // 3
 //    ^?
-type T1 = tt.A.Last<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]> // 10
+type T1 = tt.Array.Last<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]> // 10
 //    ^?
-type T2 = tt.A.Last<[1, 2, 'g', 'h', 'i', 'x', 'y', 'z']> // 'z'
+type T2 = tt.Array.Last<[1, 2, 'g', 'h', 'i', 'x', 'y', 'z']> // 'z'
 //    ^?
-type T3 = tt.A.Last<[true, false, true, false, true, false]> // false
+type T3 = tt.Array.Last<[true, false, true, false, true, false]> // false
 //    ^?
 `,
   params: [
@@ -25,16 +25,16 @@ type T3 = tt.A.Last<[true, false, true, false, true, false]> // false
       name: 'Arr',
       type: 'Array<any>',
       description: {
-        en: 'The array to query',
-        zh: '要查询的数组'
+        en: 'The array to get the last element from',
+        zh: '从中获取最后一个元素的数组'
       }
     }
   ],
   return: {
     type: 'any',
     description: {
-      en: 'Returns the last element of `Arr`',
-      zh: '返回 `Arr` 的最后一个元素'
+      en: 'The last element of the array',
+      zh: '数组的最后一个元素'
     }
   },
   sourceFilePath: 'array/last/index.tzen',

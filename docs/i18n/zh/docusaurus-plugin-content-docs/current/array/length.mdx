@@ -10,12 +10,12 @@ import Playground from '@site/src/components/Playground';
 获取数组的长度
 
 ### 参数
-<ParamTable data={[{"name":"Arr","type":"ReadonlyArray<any>","description":"要获取长度的数组源"}]} />
+<ParamTable data={[{"name":"Arr","type":"ReadonlyArray<any>","description":"要获取长度的数组"}]} />
 
 ### 返回值
 <ReturnValue data={{"type":"number","description":"数组的长度"}} />
 
 ### 游乐场
 
-<Playground tzenFilePath={"array/length/index.tzen"} testFilePath={"array/length/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Length<[]> // 0\ntype T1 = tt.A.Length<[1]> // 1\ntype T2 = tt.A.Length<[1, 2, 3]> // 3"} />
+<Playground tzenFilePath={"array/length/index.tzen"} testFilePath={"array/length/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Array.Length<[]> // 0\n//    ^?\ntype T1 = tt.Array.Length<[1]> // 1\n//    ^?\ntype T2 = tt.Array.Length<[1, 2, 3]> // 3\n//    ^?"} />
 

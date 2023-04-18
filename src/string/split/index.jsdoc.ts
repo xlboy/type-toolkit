@@ -12,8 +12,8 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.S.Split<'a-b-c', '-'> // ['a', 'b', 'c']
- * type T1 = tt.S.Split<'a->b->c', '->'> // ['a', 'b', 'c']
+ * type T0 = tt.String.Split<'a-b-c', '-'> // ['a', 'b', 'c']
+ * type T1 = tt.String.Split<'a->b->c', '->'> // ['a', 'b', 'c']
  * ```
  */
 type Preview245 = 1;

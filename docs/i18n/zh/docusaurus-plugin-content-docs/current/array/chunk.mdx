@@ -13,9 +13,9 @@ import Playground from '@site/src/components/Playground';
 <ParamTable data={[{"name":"Arr","type":"Array<any>","description":"要拆分的数组"},{"name":"Size","type":"number","description":"每个数组块的大小"}]} />
 
 ### 返回值
-<ReturnValue data={{"type":"Array<Array<any>>","description":"返回拆分后的新数组"}} />
+<ReturnValue data={{"type":"Array<Array<any>>","description":"拆分后的数组"}} />
 
 ### 游乐场
 
-<Playground tzenFilePath={"array/chunk/index.tzen"} testFilePath={"array/chunk/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.A.Chunk<[], 1> // []\n//    ^?\ntype T1 = tt.A.Chunk<[1, 2, 3, 4], 1> // [[1], [2], [3], [4]]\n//    ^?\ntype T2 = tt.A.Chunk<[1, 2, 3, 4], 2> // [[1, 2], [3, 4]]\n//    ^?\ntype T3 = tt.A.Chunk<[1, 2, 3, 4], 3> // [[1, 2, 3], [4]]\n//    ^?"} />
+<Playground tzenFilePath={"array/chunk/index.tzen"} testFilePath={"array/chunk/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.Array.Chunk<[], 1> // []\n//    ^?\ntype T1 = tt.Array.Chunk<[1, 2, 3, 4], 1> // [[1], [2], [3], [4]]\n//    ^?\ntype T2 = tt.Array.Chunk<[1, 2, 3, 4], 2> // [[1, 2], [3, 4]]\n//    ^?\ntype T3 = tt.Array.Chunk<[1, 2, 3, 4], 3> // [[1, 2, 3], [4]]\n//    ^?"} />
 

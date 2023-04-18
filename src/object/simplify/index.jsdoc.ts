@@ -11,7 +11,7 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.O.Simplify<A & B & C> // { ...A, ...B, ...C }
+ * type T0 = tt.Object.Simplify<A & B & C> // { ...A, ...B, ...C }
  * ```
  */
 type Preview151 = 1;

@@ -11,7 +11,13 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.O.Simplify<A & B & C> // { ...A, ...B, ...C }
+type UglyObject = { a: 1; b: 2 } & {
+//    ^?
+  c: { a: 1 } & { b: 2 } & { readonly c: 3 }
+}
+
+type SimplifiedObject = tt.Object.Simplify<UglyObject>
+//    ^?
 `,
   params: [
     {

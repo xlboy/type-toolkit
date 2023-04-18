@@ -11,8 +11,10 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.O.IsEmpty<{}> // true
-type T1 = tt.O.IsEmpty<{ a: 1 }> // false
+type T0 = tt.Object.IsEmpty<{}> // true
+//    ^?
+type T1 = tt.Object.IsEmpty<{ a: 1 }> // false
+//    ^?
 `,
   params: [
     {

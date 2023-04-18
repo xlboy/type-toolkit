@@ -46,6 +46,8 @@ type _ToString<
 interface _Options {
   /**
    * The mode of the returned key paths.
+   * - 'array': ['a'] | ['a', 'b']
+   * - 'string': 'a' | 'a.b'
    * @default 'array'
    */
   mode: 'array' | 'string';

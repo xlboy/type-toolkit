@@ -11,11 +11,11 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.A.Head<[1, 2, 3]> // 1
+type T0 = tt.Array.Head<[1, 2, 3]> // 1
 //    ^?
-type T1 = tt.A.Head<['1', 2]> // '1'
+type T1 = tt.Array.Head<['1', 2]> // '1'
 //    ^?
-type T2 = tt.A.Head<number[]> // number
+type T2 = tt.Array.Head<number[]> // number
 //    ^?
 `,
   params: [

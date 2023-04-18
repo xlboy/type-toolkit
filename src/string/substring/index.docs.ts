@@ -11,9 +11,12 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.Substring<'12345', 1, 3> // '23'
-type T1 = tt.S.Substring<'12345', 1> // '2345'
-type T2 = tt.S.Substring<'12345', 1, 2> // '2'
+type T0 = tt.String.Substring<'12345', 1, 3> // '23'
+//    ^?
+type T1 = tt.String.Substring<'12345', 1> // '2345'
+//    ^?
+type T2 = tt.String.Substring<'12345', 1, 2> // '2'
+//    ^?
 `,
   params: [
     {

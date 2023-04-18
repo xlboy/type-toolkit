@@ -11,9 +11,12 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.A.Join<['a', 'b', 'c'], '-'> // 'a-b-c' 
-type T1 = tt.A.Join<['a', 'b', 'c'], '->'> // 'a->b->c'
-type T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
+type T0 = tt.Array.Join<['a', 'b', 'c'], '-'> // 'a-b-c' 
+//    ^?
+type T1 = tt.Array.Join<['a', 'b', 'c'], '->'> // 'a->b->c'
+//    ^?
+type T2 = tt.Array.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'
+//    ^?
 `,
   params: [
     {

@@ -10,12 +10,12 @@ import Playground from '@site/src/components/Playground';
 Get the length of an array
 
 ### Parameters
-<ParamTable data={[{"name":"Arr","type":"ReadonlyArray<any>","description":"The source of the array to get the length from"}]} />
+<ParamTable data={[{"name":"Arr","type":"ReadonlyArray<any>","description":"The array to get the length from"}]} />
 
 ### Return Value
 <ReturnValue data={{"type":"number","description":"The length of the array"}} />
 
 ### Playground
 
-<Playground tzenFilePath={"array/length/index.tzen"} testFilePath={"array/length/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Length<[]> // 0\ntype T1 = tt.A.Length<[1]> // 1\ntype T2 = tt.A.Length<[1, 2, 3]> // 3"} />
+<Playground tzenFilePath={"array/length/index.tzen"} testFilePath={"array/length/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Array.Length<[]> // 0\n//    ^?\ntype T1 = tt.Array.Length<[1]> // 1\n//    ^?\ntype T2 = tt.Array.Length<[1, 2, 3]> // 3\n//    ^?"} />
 

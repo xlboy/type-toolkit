@@ -11,13 +11,13 @@ export default {
   example: `
 import type tt from 'type-toolkit'
 
-type T0 = tt.S.SnakeCase<'hello, world'> // 'hello_world'
+type T0 = tt.String.SnakeCase<'hello, world'> // 'hello_world'
 //    ^?
-type T1 = tt.S.SnakeCase<'foo bar'> // 'foo_bar'
+type T1 = tt.String.SnakeCase<'foo bar'> // 'foo_bar'
 //    ^?
-type T2 = tt.S.SnakeCase<'fooBar'> // 'foo_bar'
+type T2 = tt.String.SnakeCase<'fooBar'> // 'foo_bar'
 //    ^?
-type T3 = tt.S.SnakeCase<'__FOO_BAR__'> // 'foo_bar'
+type T3 = tt.String.SnakeCase<'__FOO_BAR__'> // 'foo_bar'
 //    ^?
 `,
   params: [
@@ -39,4 +39,4 @@ type T3 = tt.S.SnakeCase<'__FOO_BAR__'> // 'foo_bar'
   },
   sourceFilePath: 'string/snake-case/index.tzen',
   testFilePath: 'string/snake-case/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

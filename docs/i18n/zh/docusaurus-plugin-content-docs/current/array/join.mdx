@@ -17,5 +17,5 @@ import Playground from '@site/src/components/Playground';
 
 ### 游乐场
 
-<Playground tzenFilePath={"array/join/index.tzen"} testFilePath={"array/join/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Join<['a', 'b', 'c'], '-'> // 'a-b-c' \ntype T1 = tt.A.Join<['a', 'b', 'c'], '->'> // 'a->b->c'\ntype T2 = tt.A.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'"} />
+<Playground tzenFilePath={"array/join/index.tzen"} testFilePath={"array/join/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Array.Join<['a', 'b', 'c'], '-'> // 'a-b-c' \n//    ^?\ntype T1 = tt.Array.Join<['a', 'b', 'c'], '->'> // 'a->b->c'\n//    ^?\ntype T2 = tt.Array.Join<['a', 'b', 'c'], ' or '> // 'a or b or c'\n//    ^?"} />
 

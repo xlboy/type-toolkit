@@ -17,5 +17,5 @@ Remove the spaces at the beginning of the string
 
 ### Playground
 
-<Playground tzenFilePath={"string/trim-start/index.tzen"} testFilePath={"string/trim-start/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.TrimStart<'  11, 3'> // '11, 3'\ntype T1 = tt.S.TrimStart<'     1'> // '1'\ntype T2 = tt.S.TrimStart<'  1  '> // '1  '"} />
+<Playground tzenFilePath={"string/trim-start/index.tzen"} testFilePath={"string/trim-start/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.TrimStart<'  11, 3'> // '11, 3'\n//    ^?\ntype T1 = tt.String.TrimStart<'     1'> // '1'\n//    ^?\ntype T2 = tt.String.TrimStart<'  1  '> // '1  '\n//    ^?"} />
 

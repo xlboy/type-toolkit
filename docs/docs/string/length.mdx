@@ -17,5 +17,5 @@ Get the length of a string
 
 ### Playground
 
-<Playground tzenFilePath={"string/length/index.tzen"} testFilePath={"string/length/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.Length<'abc'> // 3\ntype T1 = tt.S.Length<''> // 0"} />
+<Playground tzenFilePath={"string/length/index.tzen"} testFilePath={"string/length/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.Length<'abc'> // 3\n//    ^?\ntype T1 = tt.String.Length<''> // 0\n//    ^?"} />
 

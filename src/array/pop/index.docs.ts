@@ -11,8 +11,10 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]
-type T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]
+type T0 = tt.Array.Pop<[1, 2, 3]> //  [1, 2]
+//    ^?
+type T1 = tt.Array.Pop<[1, 2, 3, 4]> // [1, 2, 3]
+//    ^?
 `,
   params: [
     {
@@ -20,12 +22,12 @@ type T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]
       type: 'ReadonlyArray<any>',
       description: {
         en: 'The source of the array to delete the last element from',
-        zh: '数组源'
+        zh: '要删除最后一个元素的数组'
       }
     }
   ],
   return: {
-    type: 'any[]',
+    type: 'Array<any>',
     description: {
       en: 'The array without the last element',
       zh: '没有最后一个元素的数组'

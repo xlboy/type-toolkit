@@ -11,9 +11,12 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.O.GetWritableKeys<{ a: 1 }> // 'a'
-type T2 = tt.O.GetWritableKeys<{ a: 1, b: 2, readonly c: 3 }> // 'a' | 'b'
-type T3 = tt.O.GetWritableKeys<{ readonly a: 1, readonly b: 2, readonly c: 3 }> // never
+type T0 = tt.Object.GetWritableKeys<{ a: 1 }> // 'a'
+//    ^?
+type T2 = tt.Object.GetWritableKeys<{ a: 1, b: 2, readonly c: 3 }> // 'a' | 'b'
+//    ^?
+type T3 = tt.Object.GetWritableKeys<{ readonly a: 1, readonly b: 2, readonly c: 3 }> // never
+//    ^?
 `,
   params: [
     {
@@ -28,8 +31,8 @@ type T3 = tt.O.GetWritableKeys<{ readonly a: 1, readonly b: 2, readonly c: 3 }> 
   return: {
     type: 'string | never',
     description: {
-      en: 'The writable keys (single or multiple[union]), or `never` if there is none',
-      zh: '可写键(单个或多个[union])，如果没有可写键则返回 never'
+      en: 'The key in the object that has write permission. If there is no writable key, return `never`',
+      zh: '具有写入权限的键。如果没有可写键，则返回 `never`'
     }
   },
   sourceFilePath: 'object/get-writable-keys/index.tzen',

@@ -17,5 +17,5 @@ Flatten computed objects for better preview
 
 ### Playground
 
-<Playground tzenFilePath={"object/simplify/index.tzen"} testFilePath={"object/simplify/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.O.Simplify<A & B & C> // { ...A, ...B, ...C }"} />
+<Playground tzenFilePath={"object/simplify/index.tzen"} testFilePath={"object/simplify/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype UglyObject = { a: 1; b: 2 } & {\n//    ^?\n  c: { a: 1 } & { b: 2 } & { readonly c: 3 }\n}\n\ntype SimplifiedObject = tt.Object.Simplify<UglyObject>\n//    ^?"} />
 

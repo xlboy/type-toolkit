@@ -17,5 +17,5 @@ Get the character at the specified position
 
 ### Playground
 
-<Playground tzenFilePath={"string/at/index.tzen"} testFilePath={"string/at/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.At<'abc', 1> // 'b'\ntype T1 = tt.S.At<'', 0> // undefined"} />
+<Playground tzenFilePath={"string/at/index.tzen"} testFilePath={"string/at/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.At<'abc', 1> // 'b'\n//    ^?\ntype T1 = tt.String.At<'', 0> // undefined\n//    ^?"} />
 

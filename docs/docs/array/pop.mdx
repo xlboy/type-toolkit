@@ -13,9 +13,9 @@ Delete the last element in the array
 <ParamTable data={[{"name":"Arr","type":"ReadonlyArray<any>","description":"The source of the array to delete the last element from"}]} />
 
 ### Return Value
-<ReturnValue data={{"type":"any[]","description":"The array without the last element"}} />
+<ReturnValue data={{"type":"Array<any>","description":"The array without the last element"}} />
 
 ### Playground
 
-<Playground tzenFilePath={"array/pop/index.tzen"} testFilePath={"array/pop/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]\ntype T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]"} />
+<Playground tzenFilePath={"array/pop/index.tzen"} testFilePath={"array/pop/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Array.Pop<[1, 2, 3]> //  [1, 2]\n//    ^?\ntype T1 = tt.Array.Pop<[1, 2, 3, 4]> // [1, 2, 3]\n//    ^?"} />
 

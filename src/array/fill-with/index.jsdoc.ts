@@ -6,15 +6,15 @@
  * @param Element The value to fill
  * @param Length The length to fill
  *
- * @returns (**Array<any>**): Filled array
+ * @returns (**Array<any>**): The filled array
  *
  * @example
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.A.FillWith<'a', 3> // ['a', 'a', 'a']
- * type T1 = tt.A.FillWith<1, 3> // [1, 1, 1]
- * type T2 = tt.A.FillWith<true, 3> // [true, true, true]
+ * type T0 = tt.Array.FillWith<'a', 3> // ['a', 'a', 'a']
+ * type T1 = tt.Array.FillWith<1, 3> // [1, 1, 1]
+ * type T2 = tt.Array.FillWith<true, 3> // [true, true, true]
  * ```
  */
 type Preview128150 = 1;

@@ -11,9 +11,12 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.Repeat<'-', 3> // '---'
-type T1 = tt.S.Repeat<'-_-', 3> // '-_--_--_-'
-type T2 = tt.S.Repeat<'-_-', 0> // '-_-'
+type T0 = tt.String.Repeat<'-', 3> // '---'
+//    ^?
+type T1 = tt.String.Repeat<'-_-', 3> // '-_--_--_-'
+//    ^?
+type T2 = tt.String.Repeat<'-_-', 0> // '-_-'
+//    ^?
 `,
   params: [
     {

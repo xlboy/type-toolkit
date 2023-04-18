@@ -7,15 +7,15 @@ import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
 import Playground from '@site/src/components/Playground';
 
-Checks if string ends with the given target string.
+Checks if string ends with the given target string
 
 ### Parameters
-<ParamTable data={[{"name":"Str","type":"string","description":"The string to inspect."},{"name":"Target","type":"string","description":"The string to search for."}]} />
+<ParamTable data={[{"name":"Str","type":"string","description":"The string to inspect"},{"name":"Target","type":"string","description":"The string to search for"}]} />
 
 ### Return Value
-<ReturnValue data={{"type":"boolean","description":"Returns `true` if string ends with `target`, else `false`."}} />
+<ReturnValue data={{"type":"boolean","description":"Returns `true` if string ends with `target`, else `false`"}} />
 
 ### Playground
 
-<Playground tzenFilePath={"string/ends-with/index.tzen"} testFilePath={"string/ends-with/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.EndsWith<'123-', '3-'> // true\n//   ^?\ntype T1 = tt.S.EndsWith<'123-', '-'> // true\n//   ^?\ntype T2 = tt.S.EndsWith<'123-', '3'> // false\n//   ^?"} />
+<Playground tzenFilePath={"string/ends-with/index.tzen"} testFilePath={"string/ends-with/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.EndsWith<'123-', '3-'> // true\n//   ^?\ntype T1 = tt.String.EndsWith<'123-', '-'> // true\n//   ^?\ntype T2 = tt.String.EndsWith<'123-', '3'> // false\n//   ^?"} />
 

@@ -13,9 +13,9 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.S.Slice<[1, 2, 3, 4, 5], 1, 3>  // [2, 3]
- * type T1 = tt.S.Slice<[1, 2, 3, 4, 5], 1, 10> // [2, 3, 4, 5]
- * type T2 = tt.S.Slice<[1, 2, 3, 4, 5], 10, 10> // []
+ * type T0 = tt.String.Slice<[1, 2, 3, 4, 5], 1, 3>  // [2, 3]
+ * type T1 = tt.String.Slice<[1, 2, 3, 4, 5], 1, 10> // [2, 3, 4, 5]
+ * type T2 = tt.String.Slice<[1, 2, 3, 4, 5], 10, 10> // []
  * ```
  */
 type Preview23348 = 1;

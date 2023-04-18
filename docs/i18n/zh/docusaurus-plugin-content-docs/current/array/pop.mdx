@@ -10,12 +10,12 @@ import Playground from '@site/src/components/Playground';
 删除数组中的最后一个元素
 
 ### 参数
-<ParamTable data={[{"name":"Arr","type":"ReadonlyArray<any>","description":"数组源"}]} />
+<ParamTable data={[{"name":"Arr","type":"ReadonlyArray<any>","description":"要删除最后一个元素的数组"}]} />
 
 ### 返回值
-<ReturnValue data={{"type":"any[]","description":"没有最后一个元素的数组"}} />
+<ReturnValue data={{"type":"Array<any>","description":"没有最后一个元素的数组"}} />
 
 ### 游乐场
 
-<Playground tzenFilePath={"array/pop/index.tzen"} testFilePath={"array/pop/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]\ntype T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]"} />
+<Playground tzenFilePath={"array/pop/index.tzen"} testFilePath={"array/pop/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Array.Pop<[1, 2, 3]> //  [1, 2]\n//    ^?\ntype T1 = tt.Array.Pop<[1, 2, 3, 4]> // [1, 2, 3]\n//    ^?"} />
 

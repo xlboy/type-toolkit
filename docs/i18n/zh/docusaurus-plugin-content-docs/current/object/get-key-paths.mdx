@@ -7,15 +7,15 @@ import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
 import Playground from '@site/src/components/Playground';
 
-返回一个对象的所有可能的键路径
+获取对象中所有可能的键路径
 
 ### 参数
-<ParamTable data={[{"name":"O","type":"object","description":"要查询的对象"},{"name":"Options","type":{"name":"Options","link":"https://github.com/xlboy/type-toolkit/blob/master/src/object/get-key-paths/index.tzen#L46-L52","code":"interface _Options {\n  /**\n   * The mode of the returned key paths.\n   * @default 'array'\n   */\n  mode: 'array' | 'string';\n}"},"default":"{ mode: 'array' }","description":"选项"}]} />
+<ParamTable data={[{"name":"O","type":"object","description":"要获取键路径的对象"},{"name":"Options","type":{"name":"Options","link":"https://github.com/xlboy/type-toolkit/blob/master/src/object/get-key-paths/index.tzen#L46-L54","code":"interface _Options {\n  /**\n   * The mode of the returned key paths.\n   * - 'array': ['a'] | ['a', 'b']\n   * - 'string': 'a' | 'a.b'\n   * @default 'array'\n   */\n  mode: 'array' | 'string';\n}"},"default":"{ mode: 'array' }","description":"选项"}]} />
 
 ### 返回值
-<ReturnValue data={{"type":"string[] | string","description":"返回 `O` 的键路径"}} />
+<ReturnValue data={{"type":"string[] | string","description":"所有可能的键路径。具体取决于 `Options.mode`"}} />
 
 ### 游乐场
 
-<Playground tzenFilePath={"object/get-key-paths/index.tzen"} testFilePath={"object/get-key-paths/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.O.GetKeyPaths<{ a: { b: 1 }, d: [1, { e: 1 }] }> // ['a'] | ['a', 'b'] | ['d'] | ['d', 0] | ['d', 1] | ['d', 1, 'e']\n//    ^?\ntype T1 = tt.O.GetKeyPaths<{ a: { b: 1 }, d: [1, { e: 1 }] }, { mode: 'string' }> // 'a' | 'a.b' | 'd' | 'd[0]' | 'd[1]' | 'd[1].e'\n//    ^?"} />
+<Playground tzenFilePath={"object/get-key-paths/index.tzen"} testFilePath={"object/get-key-paths/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.Object.GetKeyPaths<{ a: { b: 1 }, d: [1, { e: 1 }] }> // ['a'] | ['a', 'b'] | ['d'] | ['d', 0] | ['d', 1] | ['d', 1, 'e']\n//    ^?\ntype T1 = tt.Object.GetKeyPaths<{ a: { b: 1 }, d: [1, { e: 1 }] }, { mode: 'string' }> // 'a' | 'a.b' | 'd' | 'd[0]' | 'd[1]' | 'd[1].e'\n//    ^?"} />
 

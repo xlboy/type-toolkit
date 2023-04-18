@@ -17,5 +17,5 @@ Converts string to [pascal case](https://en.wikipedia.org/wiki/PascalCase)
 
 ### Playground
 
-<Playground tzenFilePath={"string/pascal-case/index.tzen"} testFilePath={"string/pascal-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.PascalCase<'hello, world123'> // 'HelloWorld123'\n//    ^?\ntype T1 = tt.S.PascalCase<'Foo Bar'> // 'FooBar'\n//    ^?\ntype T3 = tt.S.PascalCase<'--foo-bar--'> // 'FooBar'\n//    ^?\ntype T4 = tt.S.PascalCase<'__FOO_BAR__'> // 'FooBar'\n//    ^?"} />
+<Playground tzenFilePath={"string/pascal-case/index.tzen"} testFilePath={"string/pascal-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.PascalCase<'hello, world123'> // 'HelloWorld123'\n//    ^?\ntype T1 = tt.String.PascalCase<'Foo Bar'> // 'FooBar'\n//    ^?\ntype T3 = tt.String.PascalCase<'--foo-bar--'> // 'FooBar'\n//    ^?\ntype T4 = tt.String.PascalCase<'__FOO_BAR__'> // 'FooBar'\n//    ^?"} />
 

@@ -11,11 +11,11 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.A.Slice<[1, 2, 3, 4, 5], 1, 3> // [2, 3]
+type T0 = tt.Array.Slice<[1, 2, 3, 4, 5], 1, 3> // [2, 3]
 //    ^?
-type T1 = tt.A.Slice<[1, 2, 3, 4, 5], 1, 10> // [2, 3, 4, 5]
+type T1 = tt.Array.Slice<[1, 2, 3, 4, 5], 1, 10> // [2, 3, 4, 5]
 //    ^?
-type T2 = tt.A.Slice<[1, 2, 3, 4, 5], 10, 10> // []
+type T2 = tt.Array.Slice<[1, 2, 3, 4, 5], 10, 10> // []
 //    ^?
   `,
   params: [
@@ -53,4 +53,4 @@ type T2 = tt.A.Slice<[1, 2, 3, 4, 5], 10, 10> // []
   },
   sourceFilePath: 'array/slice/index.tzen',
   testFilePath: 'array/slice/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

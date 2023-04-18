@@ -12,8 +12,8 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.A.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]
- * type T1 = tt.A.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]
+ * type T0 = tt.Array.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]
+ * type T1 = tt.Array.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]
  * ```
  */
 type Preview194245 = 1;

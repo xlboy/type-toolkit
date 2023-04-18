@@ -7,15 +7,15 @@ import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
 import Playground from '@site/src/components/Playground';
 
-Create an array of numbers progressing from the given start value up to, but not including the end value.
+Create an array of numbers progressing from the given start value up to, but not including the end value
 
 ### Parameters
-<ParamTable data={[{"name":"Start","type":"number","description":"The start of the range."},{"name":"End","type":"number","description":"The end of the range."}]} />
+<ParamTable data={[{"name":"Start","type":"number","description":"The start of the range"},{"name":"End","type":"number","description":"The end of the range"}]} />
 
 ### Return Value
-<ReturnValue data={{"type":"number[]","description":"The range of numbers."}} />
+<ReturnValue data={{"type":"number[]","description":"The range of numbers"}} />
 
 ### Playground
 
-<Playground tzenFilePath={"number/range/index.tzen"} testFilePath={"number/range/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype Range1 = tt.N.Range<1, 5>; // [1, 2, 3, 4]\ntype Range2 = tt.N.Range<1, 1>; // []\ntype Range3 = tt.N.Range<55, 60>; // [55, 56, 57, 58, 59]"} />
+<Playground tzenFilePath={"number/range/index.tzen"} testFilePath={"number/range/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype Range1 = tt.Number.Range<1, 5>; // [1, 2, 3, 4]\n//    ^?\ntype Range2 = tt.Number.Range<1, 1>; // []\n//    ^?\ntype Range3 = tt.Number.Range<55, 60>; // [55, 56, 57, 58, 59]\n//    ^?"} />
 

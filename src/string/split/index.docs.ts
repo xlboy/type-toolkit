@@ -11,8 +11,8 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.Split<'a-b-c', '-'> // ['a', 'b', 'c']
-type T1 = tt.S.Split<'a->b->c', '->'> // ['a', 'b', 'c']
+type T0 = tt.String.Split<'a-b-c', '-'> // ['a', 'b', 'c']
+type T1 = tt.String.Split<'a->b->c', '->'> // ['a', 'b', 'c']
 `,
   params: [
     {
@@ -41,4 +41,4 @@ type T1 = tt.S.Split<'a->b->c', '->'> // ['a', 'b', 'c']
   },
   sourceFilePath: 'string/split/index.tzen',
   testFilePath: 'string/split/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

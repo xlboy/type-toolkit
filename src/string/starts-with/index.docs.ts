@@ -11,13 +11,13 @@ export default {
   example: `
 import type tt from 'type-toolkit'
 
-type T0 = tt.S.StartsWith<'123-', '1'> // true
+type T0 = tt.String.StartsWith<'123-', '1'> // true
 //    ^?
-type T1 = tt.S.StartsWith<'123-', '12'> // true
+type T1 = tt.String.StartsWith<'123-', '12'> // true
 //    ^?
-type T2 = tt.S.StartsWith<'123-', '1-'> // false
+type T2 = tt.String.StartsWith<'123-', '1-'> // false
 //    ^?
-type T3 = tt.S.StartsWith<'123-', '2'> // false
+type T3 = tt.String.StartsWith<'123-', '2'> // false
 //    ^?
 `,
   params: [
@@ -47,4 +47,4 @@ type T3 = tt.S.StartsWith<'123-', '2'> // false
   },
   sourceFilePath: 'string/starts-with/index.tzen',
   testFilePath: 'string/starts-with/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

@@ -17,5 +17,5 @@ import Playground from '@site/src/components/Playground';
 
 ### 游乐场
 
-<Playground tzenFilePath={"string/camel-case/index.tzen"} testFilePath={"string/camel-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.CamelCase<'hello, world123'> // 'helloWorld123'\n//    ^?\ntype T1 = tt.S.CamelCase<'Foo Bar'> // 'fooBar'\n//    ^?\ntype T3 = tt.S.CamelCase<'--foo-bar--'> // 'fooBar'\n//    ^?\ntype T4 = tt.S.CamelCase<'__FOO_BAR__'> // 'fooBar'\n//    ^?"} />
+<Playground tzenFilePath={"string/camel-case/index.tzen"} testFilePath={"string/camel-case/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.CamelCase<'hello, world123'> // 'helloWorld123'\n//    ^?\ntype T1 = tt.String.CamelCase<'Foo Bar'> // 'fooBar'\n//    ^?\ntype T3 = tt.String.CamelCase<'--foo-bar--'> // 'fooBar'\n//    ^?\ntype T4 = tt.String.CamelCase<'__FOO_BAR__'> // 'fooBar'\n//    ^?"} />
 

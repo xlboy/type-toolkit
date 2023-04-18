@@ -11,9 +11,9 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.A.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]
+type T0 = tt.Array.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]
 //    ^?
-type T1 = tt.A.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]
+type T1 = tt.Array.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]
 //    ^?
 `,
   params: [
@@ -43,4 +43,4 @@ type T1 = tt.A.Concat<[number, string], [boolean, 1]> // [number, string, boolea
   },
   sourceFilePath: 'array/concat/index.tzen',
   testFilePath: 'array/concat/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

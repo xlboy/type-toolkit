@@ -11,8 +11,10 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.At<'abc', 1> // 'b'
-type T1 = tt.S.At<'', 0> // undefined
+type T0 = tt.String.At<'abc', 1> // 'b'
+//    ^?
+type T1 = tt.String.At<'', 0> // undefined
+//    ^?
 `,
   params: [
     {

@@ -11,9 +11,9 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.A.Reverse<[1, 2, 3]> // [3, 2, 1]
+type T0 = tt.Array.Reverse<[1, 2, 3]> // [3, 2, 1]
 //    ^?
-type T1 = tt.A.Reverse<[1, '2', 3]> // [3, '2', 1]
+type T1 = tt.Array.Reverse<[1, '2', 3]> // [3, '2', 1]
 //    ^?
 `,
   params: [
@@ -35,4 +35,4 @@ type T1 = tt.A.Reverse<[1, '2', 3]> // [3, '2', 1]
   },
   sourceFilePath: 'array/reverse/index.tzen',
   testFilePath: 'array/reverse/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

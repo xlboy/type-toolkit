@@ -11,8 +11,8 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.A.Pop<[1, 2, 3]> //  [1, 2]
- * type T1 = tt.A.Pop<[1, 2, 3, 4]> // [1, 2, 3]
+ * type T0 = tt.Array.Pop<[1, 2, 3]> //  [1, 2]
+ * type T1 = tt.Array.Pop<[1, 2, 3, 4]> // [1, 2, 3]
  * ```
  */
 type Preview57 = 1;

@@ -7,15 +7,15 @@ import ParamTable from '@site/src/components/ParamTable';
 import ReturnValue from '@site/src/components/ReturnValue';
 import Playground from '@site/src/components/Playground';
 
-移除字符串右侧的空格
+移除字符串末尾的空格
 
 ### 参数
-<ParamTable data={[{"name":"Str","type":"string","description":"要被修剪的字符串"}]} />
+<ParamTable data={[{"name":"Str","type":"string","description":"要被移除末尾空格的字符串"}]} />
 
 ### 返回值
-<ReturnValue data={{"type":"string","description":"修剪后的字符串"}} />
+<ReturnValue data={{"type":"string","description":"没有末尾空格的字符串"}} />
 
 ### 游乐场
 
-<Playground tzenFilePath={"string/trim-end/index.tzen"} testFilePath={"string/trim-end/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.TrimEnd<'1 1, 3  '> // '1 1, 3'\ntype T1 = tt.S.TrimEnd<'  1  '> // '  1'"} />
+<Playground tzenFilePath={"string/trim-end/index.tzen"} testFilePath={"string/trim-end/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.TrimEnd<'1 1, 3  '> // '1 1, 3'\n//    ^?\ntype T1 = tt.String.TrimEnd<'  1  '> // '  1'\n//    ^?"} />
 

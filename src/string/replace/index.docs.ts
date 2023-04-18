@@ -11,8 +11,10 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.Replace<'hello world', 'l', 'L'> // 'heLlo world'
-type T1 = tt.S.Replace<'hello world', 'l', 'L', { all: true }> // 'heLLo worLd'
+type T0 = tt.String.Replace<'hello world', 'l', 'L'> // 'heLlo world'
+//    ^?
+type T1 = tt.String.Replace<'hello world', 'l', 'L', { all: true }> // 'heLLo worLd'
+//    ^?
 `,
   params: [
     {

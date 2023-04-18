@@ -12,9 +12,9 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type Range1 = tt.N.Range<1, 5> // [1, 2, 3, 4]
- * type Range2 = tt.N.Range<1, 1> // []
- * type Range3 = tt.N.Range<55, 60> // [55, 56, 57, 58, 59]
+ * type Range1 = tt.Number.Range<1, 5> // [1, 2, 3, 4]
+ * type Range2 = tt.Number.Range<1, 1> // []
+ * type Range3 = tt.Number.Range<55, 60> // [55, 56, 57, 58, 59]
  * ```
  */
 type Preview230184 = 1;

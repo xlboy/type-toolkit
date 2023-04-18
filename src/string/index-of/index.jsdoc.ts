@@ -13,10 +13,10 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.S.IndexOf<'', ''> // 0
- * type T1 = tt.S.IndexOf<'', 'a'> // -1
- * type T2 = tt.S.IndexOf<'01234', '2'> // 2
- * type T3 = tt.S.IndexOf<'01234--01234', '4', 5> // 11
+ * type T0 = tt.String.IndexOf<'', ''> // 0
+ * type T1 = tt.String.IndexOf<'', 'a'> // -1
+ * type T2 = tt.String.IndexOf<'01234', '2'> // 2
+ * type T3 = tt.String.IndexOf<'01234--01234', '4', 5> // 11
  * ```
  */
 type Preview175246 = 1;

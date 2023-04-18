@@ -11,9 +11,12 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.Trim<'  1  '> // '1'
-type T1 = tt.S.Trim<'  1 2  '> // '1 2'
-type T2 = tt.S.Trim<'  1 2 3  '> // '1 2 3'
+type T0 = tt.String.Trim<'  1  '> // '1'
+//    ^?
+type T1 = tt.String.Trim<'  1 2  '> // '1 2'
+//    ^?
+type T2 = tt.String.Trim<'  1 2 3  '> // '1 2 3'
+//    ^?
 `,
   params: [
     {
@@ -34,4 +37,4 @@ type T2 = tt.S.Trim<'  1 2 3  '> // '1 2 3'
   },
   sourceFilePath: 'string/trim/index.tzen',
   testFilePath: 'string/trim/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

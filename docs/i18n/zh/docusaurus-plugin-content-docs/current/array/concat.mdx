@@ -17,5 +17,5 @@ import Playground from '@site/src/components/Playground';
 
 ### 游乐场
 
-<Playground tzenFilePath={"array/concat/index.tzen"} testFilePath={"array/concat/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.A.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]\n//    ^?\ntype T1 = tt.A.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]\n//    ^?"} />
+<Playground tzenFilePath={"array/concat/index.tzen"} testFilePath={"array/concat/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Array.Concat<[1], [2, 3, 4, ['..'?]]> // [1, 2, 3, 4, ['..'?]]\n//    ^?\ntype T1 = tt.Array.Concat<[number, string], [boolean, 1]> // [number, string, boolean, 1]\n//    ^?"} />
 

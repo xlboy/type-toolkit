@@ -13,9 +13,9 @@ import Playground from '@site/src/components/Playground';
 <ParamTable data={[{"name":"O","type":"object","description":"要获取可写键的对象"}]} />
 
 ### 返回值
-<ReturnValue data={{"type":"string | never","description":"可写键(单个或多个[union])，如果没有可写键则返回 never"}} />
+<ReturnValue data={{"type":"string | never","description":"具有写入权限的键。如果没有可写键，则返回 `never`"}} />
 
 ### 游乐场
 
-<Playground tzenFilePath={"object/get-writable-keys/index.tzen"} testFilePath={"object/get-writable-keys/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.O.GetWritableKeys<{ a: 1 }> // 'a'\ntype T2 = tt.O.GetWritableKeys<{ a: 1, b: 2, readonly c: 3 }> // 'a' | 'b'\ntype T3 = tt.O.GetWritableKeys<{ readonly a: 1, readonly b: 2, readonly c: 3 }> // never"} />
+<Playground tzenFilePath={"object/get-writable-keys/index.tzen"} testFilePath={"object/get-writable-keys/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Object.GetWritableKeys<{ a: 1 }> // 'a'\n//    ^?\ntype T2 = tt.Object.GetWritableKeys<{ a: 1, b: 2, readonly c: 3 }> // 'a' | 'b'\n//    ^?\ntype T3 = tt.Object.GetWritableKeys<{ readonly a: 1, readonly b: 2, readonly c: 3 }> // never\n//    ^?"} />
 

@@ -11,13 +11,13 @@ export default {
   example: `
 import type tt from 'type-toolkit';
 
-type T0 = tt.S.KebabCase<'hello, world'> // 'hello-world'
+type T0 = tt.String.KebabCase<'hello, world'> // 'hello-world'
 //    ^?
-type T1 = tt.S.KebabCase<'foo bar'> // 'foo-bar'
+type T1 = tt.String.KebabCase<'foo bar'> // 'foo-bar'
 //    ^?
-type T2 = tt.S.KebabCase<'fooBar'> // 'foo-bar'
+type T2 = tt.String.KebabCase<'fooBar'> // 'foo-bar'
 //    ^?
-type T3 = tt.S.KebabCase<'__FOO_BAR__'> // 'foo-bar'
+type T3 = tt.String.KebabCase<'__FOO_BAR__'> // 'foo-bar'
 //    ^?
 `,
   params: [
@@ -39,4 +39,4 @@ type T3 = tt.S.KebabCase<'__FOO_BAR__'> // 'foo-bar'
   },
   sourceFilePath: 'string/kebab-case/index.tzen',
   testFilePath: 'string/kebab-case/index.test.ts'
-} as DocumentConfig;
+} satisfies DocumentConfig;

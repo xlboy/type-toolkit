@@ -12,9 +12,9 @@
  * ```ts
  * import type tt from 'type-toolkit'
  *
- * type T0 = tt.A.Append<[], 1> // [1]
- * type T1 = tt.A.Append<[1], string> // [1, string]
- * type T2 = tt.A.Append<string[], { a: 1 }> // [...string[], { a: 1 }]
+ * type T0 = tt.Array.Append<[], 1> // [1]
+ * type T1 = tt.Array.Append<[1], string> // [1, string]
+ * type T2 = tt.Array.Append<string[], { a: 1 }> // [...string[], { a: 1 }]
  * ```
  */
 type Preview195204 = 1;

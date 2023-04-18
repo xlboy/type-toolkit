@@ -13,9 +13,9 @@ import Playground from '@site/src/components/Playground';
 <ParamTable data={[{"name":"Str","type":"string","description":"要分割的字符串"}]} />
 
 ### 返回值
-<ReturnValue data={{"type":"string[]","description":"返回字符串`Str`的单词数组"}} />
+<ReturnValue data={{"type":"string[]","description":"分割后的单词数组"}} />
 
 ### 游乐场
 
-<Playground tzenFilePath={"string/split-words/index.tzen"} testFilePath={"string/split-words/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.S.SplitWords<'fred, barney, & pebbles'> // ['fred', 'barney', 'pebbles']\n//    ^?\ntype T1 = tt.S.SplitWords<'helloWORLD, hi, 111'>  // ['hello', 'WORLD', 'hi', '111']\n//    ^?"} />
+<Playground tzenFilePath={"string/split-words/index.tzen"} testFilePath={"string/split-words/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.SplitWords<'fred, barney, & pebbles'> // ['fred', 'barney', 'pebbles']\n//    ^?\ntype T1 = tt.String.SplitWords<'helloWORLD, hi, 111'>  // ['hello', 'WORLD', 'hi', '111']\n//    ^?"} />
 
