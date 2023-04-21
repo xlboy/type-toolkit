@@ -1,10 +1,14 @@
 import type * as A from '../../array'
+import type * as G from '../../guard'
 
 type _ToArray<
   O: object, 
   Output: Array<Array<string>> = []
 > = ^{
   type OKeys = O == Array<any> ? Exclude<keyof O, keyof []> : keyof O;
+
+  // O = [] -> OKeys = never
+  if (G.IsNever<OKeys> == true) { return Output }
 
   for (infer K in OKeys) {
     type FilteredK = K == `${infer V extends number}` ? V : K;
@@ -23,6 +27,9 @@ type _ToString<
   Output: Array<string> = []
 > = ^{
   type OKeys = O == Array<any> ? Exclude<keyof O, keyof []> : keyof O;
+  
+  // O = [] -> OKeys = never
+  if (G.IsNever<OKeys> == true) { return Output }
 
   for (infer K in OKeys) {
     type CurPath = ^ {

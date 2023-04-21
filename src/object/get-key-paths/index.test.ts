@@ -58,6 +58,10 @@ type _ = Checker<
       | 'f[2].b[0]'
       | 'f[2].b[0].c'
       | 'f[2].g'
-    >
+    >,
+    Equal<GetKeyPaths<[1, { b: [] }]>, [0] | [1] | [1, 'b']>,
+    Equal<GetKeyPaths<[1, { b: [] }], { mode: 'string' }>, '[0]' | '[1]' | '[1].b'>,
+    Equal<GetKeyPaths<[]>, never>,
+    Equal<GetKeyPaths<{}>, never>
   ]
 >;
