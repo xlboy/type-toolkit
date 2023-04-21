@@ -1,0 +1,21 @@
+---
+slug: /object/get-property
+title: GetProperty
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Get the value of the property by key path, similar to [get](https://lodash.com/docs/4.17.15#get) in lodash
+
+### Parameters
+<ParamTable data={[{"name":"O","type":"object","description":"The object to query"},{"name":"KeyPath","type":"GetKeyPaths<O, { mode: 'string' }>","description":"The key path of the property to get"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"any","description":"The resolved value"}} />
+
+### Playground
+
+<Playground tzenFilePath={"object/get-property/index.tzen"} testFilePath={"object/get-property/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.Object.GetProperty<{ a: { b: { c: 'ah' } } }, 'a.b.c'> // 'ah'\n//    ^?\ntype T1 = tt.Object.GetProperty<{ b: [1, { d: 2 }] }, 'b[0]'> // 1\n//    ^?\ntype T2 = tt.Object.GetProperty<{ b: [1, { d: 2 }] }, 'b[1].d'> // 2\n//    ^?"} />
+

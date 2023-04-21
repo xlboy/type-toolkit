@@ -1,0 +1,62 @@
+import type { GetKeyPaths } from '../get-key-paths/index.tzen'
+import type { ArrToObj } from '../_internal.tzen'
+import type * as S from '../../string'
+import type * as G from '../../guard'
+
+type _Handle<
+  CurO: object, 
+  // ['a', '3', 'c']
+  CurKeyPaths: Array<string>
+> = ^{
+  if (CurKeyPaths == [infer Key, ...infer RestKeyPaths]) {
+    if (CurO == { [k in Key]: infer Value }) {
+      if (RestKeyPaths['length'] == 0) {
+        return Value
+      } else {
+        return _Handle<Value, RestKeyPaths>
+      }
+    }
+  }
+}
+
+// ['a[3][4]',  'c', '[5]] -> ['a', '3', '4', 'c', 5]
+export type FilterNumberKey<
+  Keys: Array<string>, 
+  Output: string[] = []
+> = ^{
+  if (Keys == [infer H, ...infer R]) {
+    // 'a[3][4]' -> ['a', '[3][4]'] 
+    // 'a' -> never 
+    // '[3]' -> ['', '[3]']
+    type _ = ^{
+      if (H == `${infer F}[${infer NumberStr}]`) {
+        return [F, `[${NumberStr}]`]
+      }
+    }
+    
+    return FilterNumberKey<R, [
+      ...Output,
+      ...(^ {
+        if (_ == any[]) {
+          type NumberContents =  S.ExtractContentBetweenDelimiters<_[1], '[', ']'>
+
+          return _[0] == '' ? NumberContents : [_[0], ...NumberContents]
+        } else {
+          return [H]
+        }
+      })
+    ]>
+  }
+
+  return Output
+}
+
+export type GetProperty<
+  O: object,
+  KeyPath: GetKeyPaths<O, { mode: 'string' }>
+> = _Handle<
+  O, 
+  FilterNumberKey<
+    S.Split<KeyPath, '.'>
+  >
+>

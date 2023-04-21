@@ -1,0 +1,5 @@
+export type ArrToObj<Arr: Array<any>> = ^{
+  type Keys = Exclude<keyof Arr, keyof []>;
+  
+  return { [K in Keys]: Arr[K] }
+}
