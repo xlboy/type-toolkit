@@ -1,0 +1,21 @@
+---
+slug: /guard/if-never
+title: IfNever
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+If the type is `never`, returns the first type, otherwise returns the second type
+
+### Parameters
+<ParamTable data={[{"name":"Target","description":"The type to check"},{"name":"TrueType","default":"true","description":"The type to return if the type is `never`"},{"name":"FalseType","default":"false","description":"The type to return if the type is not `never`"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"TrueType | FalseType","description":"If the type is `never`, returns `TrueType`, otherwise returns `FalseType`"}} />
+
+### Playground
+
+<Playground tzenFilePath={"guard/if-never/index.tzen"} testFilePath={"guard/if-never/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Guard.IfNever<never, 'yes', 'no'> // 'yes'\n//    ^?\ntype T1 = tt.Guard.IfNever<never, '__'> // '__'\n//    ^?\ntype T2 = tt.Guard.IfNever<undefined, 'yes'> // false\n//    ^?\ntype T3 = tt.Guard.IfNever<null, 'yes', 'no..'> // 'no..'\n//    ^?"} />
+

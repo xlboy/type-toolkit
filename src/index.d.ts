@@ -9,3 +9,5 @@ export type * as String from './string';
 export type * as Number from './number';
 
 export type * as Utils from './utils.tzen';
+
+export type * as Guard from './guard';

@@ -1,0 +1,7 @@
+import type { IsNever } from '../is-never/index.tzen'
+
+export type IfNever<
+  Target,
+  TrueType = true,
+  FalseType = false
+> = IsNever<Target> == true ? TrueType : FalseType

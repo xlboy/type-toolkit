@@ -1,0 +1,21 @@
+---
+slug: /guard/is-any
+title: IsAny
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Checks if the type is `any`
+
+### Parameters
+<ParamTable data={[{"name":"Target","description":"The type to check"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"boolean","description":"`true` if the type is `any`, otherwise `false`"}} />
+
+### Playground
+
+<Playground tzenFilePath={"guard/is-any/index.tzen"} testFilePath={"guard/is-any/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Guard.IsAny<any> // true\n//    ^?\ntype T1 = tt.Guard.IsAny<never> // false\n//    ^?\ntype T2 = tt.Guard.IsAny<unknown> // false\n//    ^?"} />
+

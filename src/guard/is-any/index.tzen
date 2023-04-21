@@ -1,0 +1,1 @@
+export type IsAny<Target> = 0 == 1 & Target ? true : false;

@@ -1,0 +1,7 @@
+import type { IsAny } from '../is-any/index.tzen'
+
+export type IfAny<
+  Target,
+  TrueType = true,
+  FalseType = false
+> = IsAny<Target> == true ? TrueType : FalseType

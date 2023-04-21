@@ -1,0 +1,21 @@
+---
+slug: /guard/is-never
+title: IsNever
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Checks if the type is `never`
+
+### Parameters
+<ParamTable data={[{"name":"Target","description":"The type to check"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"boolean","description":"`true` if the type is `never`, otherwise `false`"}} />
+
+### Playground
+
+<Playground tzenFilePath={"guard/is-never/index.tzen"} testFilePath={"guard/is-never/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Guard.IsNever<never> // true\n//    ^?\ntype T1 = tt.Guard.IsNever<undefined> // false\n//    ^?\ntype T2 = tt.Guard.IsNever<null> // false\n//    ^?"} />
+

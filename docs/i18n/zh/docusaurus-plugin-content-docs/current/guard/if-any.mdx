@@ -1,0 +1,21 @@
+---
+slug: /guard/if-any
+title: IfAny
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+如果类型为 `any`，返回第一个类型，否则返回第二个类型
+
+### 参数
+<ParamTable data={[{"name":"Target","description":"要检查的类型"},{"name":"TrueType","default":"true","description":"如果类型为 `any`，返回的类型"},{"name":"FalseType","default":"false","description":"如果类型不为 `any`，返回的类型"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"TrueType | FalseType","description":"如果类型为 `any`，返回 `TrueType`，否则返回 `FalseType`"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"guard/if-any/index.tzen"} testFilePath={"guard/if-any/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Guard.IfAny<any, 'yes', 'no'> // 'yes'\n//    ^?\ntype T1 = tt.Guard.IfAny<any, '__'> // '__'\n//    ^?\ntype T2 = tt.Guard.IfAny<undefined, 'yes'> // false\n//    ^?\ntype T3 = tt.Guard.IfAny<null, 'yes', 'no..'> // 'no..'\n//    ^?"} />
+
