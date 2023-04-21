@@ -1,6 +1,6 @@
 {
   "name": "type-toolkit",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "A TypeScript type utility library developed in the TypeZen language",
   "main": "./index.d.ts",
   "types": "./index.d.ts",
