@@ -1,0 +1,23 @@
+type _Handle<
+  $: { LeftD: string, RightD: string },
+  CurStr: string,
+  Output: string[] = []
+> = ^{
+  if (CurStr == '') { return Output }
+  
+  if (CurStr == `${any}${$['LeftD']}${infer Body}${$['RightD']}${infer R}`) {
+    return _Handle<$, R, [...Output, Body]>
+  } else { 
+    return Output
+  }
+}
+
+export type ExtractContentBetweenDelimiters<
+  Str: string,
+  LeftDelimiter: string,
+  RightDelimiter: string
+> = _Handle<
+  { LeftD: LeftDelimiter, RightD: RightDelimiter },
+  Str
+>
+  

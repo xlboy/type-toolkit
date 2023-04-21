@@ -1,0 +1,21 @@
+---
+slug: /string/extract-content-between-delimiters
+title: ExtractContentBetweenDelimiters
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+提取两个分隔符之间的文本内容
+
+### 参数
+<ParamTable data={[{"name":"Str","type":"string","description":"要提取的字符串"},{"name":"LeftDelimiter","type":"string","description":"左分隔符"},{"name":"RightDelimiter","type":"string","description":"右分隔符"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"string[]","description":"返回两个分隔符之间的文本内容"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"string/extract-content-between-delimiters/index.tzen"} testFilePath={"string/extract-content-between-delimiters/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.String.ExtractContentBetweenDelimiters<'__[123]?.[gg]...', '[', ']'> // ['123', 'gg']\n//    ^?\ntype T1 = tt.String.ExtractContentBetweenDelimiters<'[123][gg]', '[', ']'> // ['123', 'gg']\n//    ^?\ntype T2 = tt.String.ExtractContentBetweenDelimiters<'{123,... }', '{', '}'> // ['123,... ']\n//    ^?\ntype T3 = tt.String.ExtractContentBetweenDelimiters<'/api/getUserInfo?#{id},#{name}', '#{', '}'> // ['id', 'name']\n//    ^?"} />
+
