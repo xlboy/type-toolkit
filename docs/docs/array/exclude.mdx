@@ -1,0 +1,21 @@
+---
+slug: /array/exclude
+title: Exclude
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Exclude certain elements from an array
+
+### Parameters
+<ParamTable data={[{"name":"Arr","type":"Array<any>","description":"The array to exclude elements from"},{"name":"Element","description":"The elements to exclude"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"Array<any>","description":"The array without the excluded elements"}} />
+
+### Playground
+
+<Playground tzenFilePath={"array/exclude/index.tzen"} testFilePath={"array/exclude/index.test.ts"} exampleCode={"import type tt from 'type-toolkit';\n\ntype T0 = tt.Array.Exclude<['a', 'b', 'c'], 'a' | 'c'> // ['b']\n//    ^?\ntype T1 = tt.Array.Exclude<[{ a: 1 }, 'b', 'a' | null, 'c'?], { a: 1 } | null | undefined> // ['b', 'a', 'c']\n//    ^?"} />
+

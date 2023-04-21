@@ -1,0 +1,33 @@
+import type { Equal } from '../../utils.tzen'
+import type * as Union from '../../union'
+
+type _HandleTuple<
+  $: { Element: any },
+  CurTuple: ReadonlyArray<any>,
+  Output: ReadonlyArray<any> = []
+> = ^{
+  if (CurTuple == [infer H, ...infer T]) {
+    type ExcludedValue = Exclude<H, $['Element']>
+    type NewOutput = Equal<ExcludedValue, never> == true ? Output : [...Output, ExcludedValue]
+
+    return _HandleTuple<$, T, NewOutput>
+  } 
+  // CurTuple = [1?], CurTuple['length'] = 0 | 1
+  else if (Union.Has<CurTuple['length'], 1> == true) {
+    return [...Output, Exclude<CurTuple[0], $['Element']>]
+  } else {
+    return Output
+  }
+}
+
+type _Exclude<Arr: Array<any>, Element> = ^{
+  if (Equal<Arr['length'], number> == true) {
+    if (Arr == Array<infer T>) {
+      return Array<Exclude<T, Element>>
+    }
+  } else {
+    return _HandleTuple<{ Element: Element }, Arr>
+  }
+}
+
+export type { _Exclude as Exclude };

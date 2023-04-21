@@ -10,3 +10,4 @@ export type { Reverse } from './reverse/index.tzen';
 export type { Last } from './last/index.tzen';
 export type { Head } from './head/index.tzen';
 export type { NonNullable } from './non-nullable/index.tzen';
+export type { Exclude } from './exclude/index.tzen';
