@@ -1,0 +1,21 @@
+---
+slug: /guard/is-equal
+title: IsEqual
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+Checks if the two types are equal
+
+### Parameters
+<ParamTable data={[{"name":"X","description":"The first type to check"},{"name":"Y","description":"The second type to check"}]} />
+
+### Return Value
+<ReturnValue data={{"type":"boolean","description":"`true` if the two types are equal, otherwise `false`"}} />
+
+### Playground
+
+<Playground tzenFilePath={"guard/is-equal/index.tzen"} testFilePath={"guard/is-equal/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.Guard.IsEqual<1, false> // false\n//    ^?\ntype T1 = tt.Guard.IsEqual<1, 1> // true\n//    ^?\ntype T2 = tt.Guard.IsEqual<'1' | '2', '2'> // false\n//    ^?\ntype T3 = tt.Guard.IsEqual<'1' | '2', '2' | '1'> // true\n//    ^?\ntype T4 = tt.Guard.IsEqual<{ a: 1 }, { a: 1 }> // true\n//    ^?\ntype T5 = tt.Guard.IsEqual<{ a: 1 }, { a?: 1 }> // false\n//    ^?\ntype T6 = tt.Guard.IsEqual<() => boolean, () => void> // false\n//    ^?\ntype T7 = tt.Guard.IsEqual<() => void, (a: number) => void> // false\n//    ^?\ntype T8 = tt.Guard.IsEqual<(a: number) => void, (b: number) => void> // true\n//    ^?"} />
+

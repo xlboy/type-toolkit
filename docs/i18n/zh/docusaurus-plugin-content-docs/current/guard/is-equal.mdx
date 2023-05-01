@@ -1,0 +1,21 @@
+---
+slug: /guard/is-equal
+title: IsEqual
+---
+
+import ParamTable from '@site/src/components/ParamTable';
+import ReturnValue from '@site/src/components/ReturnValue';
+import Playground from '@site/src/components/Playground';
+
+检查两个类型是否相等
+
+### 参数
+<ParamTable data={[{"name":"X","description":"要检查的第一个类型"},{"name":"Y","description":"要检查的第二个类型"}]} />
+
+### 返回值
+<ReturnValue data={{"type":"boolean","description":"如果两个类型相等则为 `true`，否则为 `false`"}} />
+
+### 游乐场
+
+<Playground tzenFilePath={"guard/is-equal/index.tzen"} testFilePath={"guard/is-equal/index.test.ts"} exampleCode={"import type tt from 'type-toolkit'\n\ntype T0 = tt.Guard.IsEqual<1, false> // false\n//    ^?\ntype T1 = tt.Guard.IsEqual<1, 1> // true\n//    ^?\ntype T2 = tt.Guard.IsEqual<'1' | '2', '2'> // false\n//    ^?\ntype T3 = tt.Guard.IsEqual<'1' | '2', '2' | '1'> // true\n//    ^?\ntype T4 = tt.Guard.IsEqual<{ a: 1 }, { a: 1 }> // true\n//    ^?\ntype T5 = tt.Guard.IsEqual<{ a: 1 }, { a?: 1 }> // false\n//    ^?\ntype T6 = tt.Guard.IsEqual<() => boolean, () => void> // false\n//    ^?\ntype T7 = tt.Guard.IsEqual<() => void, (a: number) => void> // false\n//    ^?\ntype T8 = tt.Guard.IsEqual<(a: number) => void, (b: number) => void> // true\n//    ^?"} />
+
