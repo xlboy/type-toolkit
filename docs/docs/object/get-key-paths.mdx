@@ -10,7 +10,7 @@ import Playground from '@site/src/components/Playground';
 Gets all possible key paths of the object
 
 ### Parameters
-<ParamTable data={[{"name":"O","type":"object","description":"The object to get key paths"},{"name":"Options","type":{"name":"Options","link":"https://github.com/xlboy/type-toolkit/blob/master/src/object/get-key-paths/index.tzen#L46-L54","code":"      return _ToString<O[K], [...Output, CurPath]>;\n    } else {\n      return [...Output, CurPath];\n    }\n  }\n}\n\ninterface _Options {\n  /**"},"default":"{ mode: 'array' }","description":"Options"}]} />
+<ParamTable data={[{"name":"O","type":"object","description":"The object to get key paths"},{"name":"Options","type":{"name":"Options","link":"https://github.com/xlboy/type-toolkit/blob/master/src/object/get-key-paths/index.tzen#L53-L61","code":"interface _Options {\n  /**\n   * The mode of the returned key paths.\n   * - 'array': ['a'] | ['a', 'b']\n   * - 'string': 'a' | 'a.b'\n   * @default 'array'\n   */\n  mode: 'array' | 'string';\n}"},"default":"{ mode: 'array' }","description":"Options"}]} />
 
 ### Return Value
 <ReturnValue data={{"type":"string[] | string","description":"All possible key paths. Depends on `Options.mode`"}} />

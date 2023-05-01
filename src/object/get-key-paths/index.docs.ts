@@ -22,7 +22,7 @@ export default {
       type: {
         code: {
           filePath: 'object/get-key-paths/index.tzen',
-          line: [46, 54]
+          line: [53, 61]
         },
         name: 'Options'
       },
