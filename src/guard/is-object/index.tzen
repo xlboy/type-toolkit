@@ -1,0 +1,20 @@
+import type { IfNever } from '../if-never/index.tzen'
+import type { IfAny } from '../if-any/index.tzen'
+
+export type IsObject<T> = ^{
+  if (IfAny<T> == true) {
+    return false
+  } else if (IfNever<T> == true) {
+    return false
+  } else if (T == (...args: Array<any>) => any) {
+    return false
+  } else if (T == Array<any>) {
+    return false
+  } else if (T == ReadonlyArray<any>) {
+    return false
+  } else if (T == object) {
+    return true
+  } else {
+    return false
+  }
+}
