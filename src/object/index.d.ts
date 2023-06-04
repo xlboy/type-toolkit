@@ -4,3 +4,4 @@ export type { SetWritable } from './set-writable/index.tzen';
 export type { Simplify } from './simplify/index.tzen';
 export type { GetKeyPaths } from './get-key-paths/index.tzen';
 export type { GetProperty } from './get-property/index.tzen';
+export type { Rename } from './rename/index.tzen';

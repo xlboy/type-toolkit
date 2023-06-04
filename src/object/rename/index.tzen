@@ -1,0 +1,91 @@
+import type { IsEqual, IsObject, IfNever } from '../../guard'
+import type { Simplify } from '../simplify/index.tzen'
+
+export type _HasKey<O: object, K, Strict: boolean> = IfNever<_GetTargetKeys<O, K, Strict>, false, true>
+
+type _GetTargetKeys<O: object, OldKey, Strict: boolean> = ^{
+  type OKeys = keyof O
+  
+  for (infer Key in OKeys) {
+    type IsTargetKey<A, B, Strict: boolean> = ^{
+      if (Strict == true) {
+        return IsEqual<A, B>
+      } else {
+        return A == B ? true : false
+      }
+    }
+    
+    if (IsTargetKey<Key, OldKey, Strict> == true) {
+      return Key
+    }
+  }
+}
+
+type _Rename<O: object, OldKey, NewKey, Strict: boolean> = ^{
+  type TargetKeys = _GetTargetKeys<O, OldKey, Strict>
+  
+  return Omit<O, TargetKeys> &
+    { 
+      [K in NewKey]: ^{
+        if (IsEqual<OldKey, string> == true) {
+          return O[TargetKeys]
+        } else if (IsEqual<OldKey, number> == true) {
+          return O[TargetKeys]
+        } else {
+          return O[OldKey]
+        }
+      } 
+    }
+}
+
+
+type _HandleDeep<
+  $: { OldKey: unknown; NewKey: unknown; Strict: boolean },
+  O: object
+> = ^{
+  type KeyofSource = ^{
+    if (_HasKey<O, $['OldKey'], Options['strict']> == false) {
+      return keyof O
+    } else {
+      return Simplify<_Rename<O, $['OldKey'], $['NewKey'], Options['strict']>>
+    }
+  }
+
+  return {
+    [K in keyof KeyofSource]: ^{
+      type Value = KeyofSource[K]
+      return IsObject<Value> == true ? _HandleDeep<$, Value> : Value
+    }
+  }
+}
+
+interface _Options {
+  /**
+   * @default false
+   */
+  deep?: boolean
+  /**
+   * @default false
+   */
+  strict?: boolean
+}
+
+export type Rename<
+  O: object,
+  OldKey,
+  NewKey,
+  Options extends _Options = { deep: false; strict: false }
+> = ^{
+  if (Options['deep'] == true) {
+    return _HandleDeep<
+      { OldKey: OldKey; NewKey: NewKey; Strict: Options['strict'] },
+      O
+    >
+  } else {
+    if (_HasKey<O, OldKey, Options['strict']> == false) {
+      return O
+    }
+
+    return Simplify<_Rename<O, OldKey, NewKey, Options['strict']>>
+  }
+}
