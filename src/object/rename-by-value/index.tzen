@@ -1,0 +1,76 @@
+import type { IsEqual, IsObject, IfNever, Is } from '../../guard'
+import type { MatchType } from '../../guard/is/index.tzen'
+import type { Simplify } from '../simplify/index.tzen'
+
+type _HasKey<O: object, Value, _MatchType: MatchType> = 
+  IfNever<_GetTargetKeys<O, Value, _MatchType>, false, true>
+
+export type _GetTargetKeys<O: object, Value, _MatchType: MatchType> = ^{
+  type OKeys = keyof O
+
+  for(infer Key in OKeys) {
+    type IsTargetKey = Is<Value, O[Key], _MatchType>
+    if (IsTargetKey == true) { return Key }
+  }
+}
+
+type _Rename<O: object, Value, NewKey, _MatchType: MatchType> = ^{
+  type TargetKeys = _GetTargetKeys<O, Value, _MatchType>
+  
+  return Omit<O, TargetKeys> & { [K in NewKey]: O[TargetKeys] }
+}
+
+type _HandleDeep<
+  $: { Value: unknown; NewKey: unknown; MatchType: MatchType },
+  O: object
+> = ^{
+  type KeyofSource = ^{
+    if (_HasKey<O, $['Value'], $['MatchType']> == false) {
+      return O
+    } else {
+      return Simplify<_Rename<O, $['Value'], $['NewKey'], $['MatchType']>>
+    }
+  }
+
+  return {
+    [K in keyof KeyofSource]: ^{
+      type Item = KeyofSource[K]
+      return IsObject<Item> == true ? _HandleDeep<$, Item> : Item
+    }
+  }
+}
+
+interface _Options {
+  /**
+   * `->`: Value extends *
+   * `<-`: * extends Value
+   * `===`: IsEqual<Value, *>
+   * @default '->'
+   */
+  matchType?: MatchType;
+
+  /**
+   * @default false
+   */
+  deep?: boolean
+}
+
+export type RenameByValue<
+  O: object,
+  Value,
+  NewKey,
+  Options: _Options = { deep: false;  matchType: '->' }
+> = ^{
+  if (Options['deep'] == true) {
+    return _HandleDeep<
+      { Value: Value; NewKey: NewKey; MatchType: Options['matchType'] },
+      O
+    >
+  } else {
+    if (_HasKey<O, Value, Options['matchType']> == false) {
+      return O
+    }
+
+    return Simplify<_Rename<O, Value, NewKey, Options['matchType']>>
+  }
+}

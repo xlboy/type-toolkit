@@ -44,10 +44,10 @@ type _HandleDeep<
   O: object
 > = ^{
   type KeyofSource = ^{
-    if (_HasKey<O, $['OldKey'], Options['strict']> == false) {
-      return keyof O
+    if (_HasKey<O, $['OldKey'], $['strict']> == false) {
+      return O
     } else {
-      return Simplify<_Rename<O, $['OldKey'], $['NewKey'], Options['strict']>>
+      return Simplify<_Rename<O, $['OldKey'], $['NewKey'], $['strict']>>
     }
   }
 
