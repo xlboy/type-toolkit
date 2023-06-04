@@ -7,3 +7,5 @@ export type { IfAny } from './if-any/index.tzen';
 export type { IsEqual } from './is-equal/index.tzen';
 
 export type { IsObject } from './is-object/index.tzen';
+
+export type { Is } from './is/index.tzen';

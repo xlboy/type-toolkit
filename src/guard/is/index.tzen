@@ -1,0 +1,17 @@
+import type { IsEqual  } from '../is-equal/index.tzen'
+
+export type MatchType = 
+  // X = 'a', Y = 'a' | 'b', X extends Y = true
+  '->' 
+  // X = 'a', Y = 'a' | 'b', X extends Y = false
+  | '<-' 
+  // strict equals (use `IsEqual`)
+  | '==='
+
+type If<X, Y> = [X] == [Y] ? true : false
+
+export type Is<X, Y, _MatchType: MatchType = '->'> = ^{
+  if (_MatchType == '->') { return If<X, Y> }
+  else if (_MatchType == '<-') { return If<Y, X> }
+  else if (_MatchType == '===') { return IsEqual<X, Y> }
+}
