@@ -1,0 +1,31 @@
+import type { GetKeyPaths } from '../get-key-paths/index.tzen'
+import type { Simplify } from '../simplify/index.tzen'
+import type { FlattenKeyPaths } from '../_internal.tzen'
+
+type _Handle<
+  $: { NewKey: unknown },
+  CurO: object,
+  CurKeyPaths: Array<string>
+> = ^{
+  if (CurKeyPaths == [infer Key, ...infer RestKeyPaths]) {
+    if (CurO == { [k in Key]: infer Value }) {
+      if (RestKeyPaths['length'] == 0) {
+        return Omit<CurO, Key> & { [K in $['NewKey']]: CurO[Key] }
+      } else {
+        return Omit<CurO, Key> & { [K in Key]: _Handle<$, Value, RestKeyPaths> } 
+      }
+    }
+
+    return CurO
+  }
+}
+
+export type RenameByKeyPath<
+  O: object,
+  KeyPath: GetKeyPaths<O, { mode: 'string' }>,
+  NewKey: string
+> = ^{
+  return Simplify<
+    _Handle<{ NewKey: NewKey }, O, FlattenKeyPaths<KeyPath>>
+  >
+}

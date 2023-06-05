@@ -1,5 +1,44 @@
+import type * as S from '../string'
+
 export type ArrToObj<Arr: Array<any>> = ^{
   type Keys = Exclude<keyof Arr, keyof []>;
   
   return { [K in Keys]: Arr[K] }
+}
+
+export type FlattenKeyPaths<KeyPaths: string> = ^{
+  type FilterNumberKey<
+    Keys: Array<string>, 
+    Output: string[] = []
+  > = ^{
+    if (Keys == [infer H, ...infer R]) {
+      // 'a[3][4]' -> ['a', '[3][4]'] 
+      // 'a' -> never 
+      // '[3]' -> ['', '[3]']
+      type _ = ^{
+        if (H == `${infer F}[${infer NumberStr}]`) {
+          return [F, `[${NumberStr}]`]
+        }
+      }
+      
+      return FilterNumberKey<R, [
+        ...Output,
+        ...(^ {
+          if (_ == any[]) {
+            type NumberContents =  S.ExtractContentBetweenDelimiters<_[1], '[', ']'>
+
+            return _[0] == '' ? NumberContents : [_[0], ...NumberContents]
+          } else {
+            return [H]
+          }
+        })
+      ]>
+    }
+
+    return Output
+  }
+
+  for (infer KeyPath in KeyPaths) {
+    return FilterNumberKey< S.Split<KeyPath, '.'> >
+  }
 }

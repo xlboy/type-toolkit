@@ -1,7 +1,5 @@
 import type { GetKeyPaths } from '../get-key-paths/index.tzen'
-import type { ArrToObj } from '../_internal.tzen'
-import type * as S from '../../string'
-import type * as G from '../../guard'
+import type { FlattenKeyPaths } from '../_internal.tzen'
 
 type _Handle<
   CurO: object, 
@@ -19,44 +17,12 @@ type _Handle<
   }
 }
 
-// ['a[3][4]',  'c', '[5]] -> ['a', '3', '4', 'c', 5]
-export type FilterNumberKey<
-  Keys: Array<string>, 
-  Output: string[] = []
-> = ^{
-  if (Keys == [infer H, ...infer R]) {
-    // 'a[3][4]' -> ['a', '[3][4]'] 
-    // 'a' -> never 
-    // '[3]' -> ['', '[3]']
-    type _ = ^{
-      if (H == `${infer F}[${infer NumberStr}]`) {
-        return [F, `[${NumberStr}]`]
-      }
-    }
-    
-    return FilterNumberKey<R, [
-      ...Output,
-      ...(^ {
-        if (_ == any[]) {
-          type NumberContents =  S.ExtractContentBetweenDelimiters<_[1], '[', ']'>
-
-          return _[0] == '' ? NumberContents : [_[0], ...NumberContents]
-        } else {
-          return [H]
-        }
-      })
-    ]>
-  }
-
-  return Output
-}
 
 export type GetProperty<
   O: object,
   KeyPath: GetKeyPaths<O, { mode: 'string' }>
-> = _Handle<
-  O, 
-  FilterNumberKey<
-    S.Split<KeyPath, '.'>
-  >
->
+> = ^{
+  for (infer Item in KeyPath) {
+    return _Handle<O, FlattenKeyPaths<KeyPath>>   
+  }
+}
