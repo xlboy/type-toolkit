@@ -1,0 +1,20 @@
+import type { Simplify } from '../simplify/index.tzen'
+import type { IsObject } from '../../guard'
+
+type _Handle<$: { Key: string }, CurO: object> = ^{
+  type FilteredObj = Omit<CurO, $['Key']>
+
+  return {
+    [K in keyof FilteredObj]: ^{
+      type Value = FilteredObj[K]
+
+      if (IsObject<Value> == true) { 
+        return _Handle<$, Value> 
+      } else { 
+        return Value 
+      }
+    }
+  }
+}
+
+export type OmitDeep<O: object, Key> = Simplify< _Handle<{ Key: Key }, O> >;
