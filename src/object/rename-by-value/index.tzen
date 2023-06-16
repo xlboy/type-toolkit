@@ -1,21 +1,13 @@
 import type { IsEqual, IsObject, IfNever, Is } from '../../guard'
 import type { MatchType } from '../../guard/is/index.tzen'
 import type { Simplify } from '../simplify/index.tzen'
+import type { GetKeysByValue } from '../get-keys-by-value/index.tzen'
 
 type _HasKey<O: object, Value, _MatchType: MatchType> = 
-  IfNever<_GetTargetKeys<O, Value, _MatchType>, false, true>
-
-export type _GetTargetKeys<O: object, Value, _MatchType: MatchType> = ^{
-  type OKeys = keyof O
-
-  for(infer Key in OKeys) {
-    type IsTargetKey = Is<Value, O[Key], _MatchType>
-    if (IsTargetKey == true) { return Key }
-  }
-}
+  IfNever<GetKeysByValue<O, Value, { matchType: _MatchType }>, false, true>
 
 type _Rename<O: object, Value, NewKey, _MatchType: MatchType> = ^{
-  type TargetKeys = _GetTargetKeys<O, Value, _MatchType>
+  type TargetKeys = GetKeysByValue<O, Value, { matchType: _MatchType }>
   
   return Omit<O, TargetKeys> & { [K in NewKey]: O[TargetKeys] }
 }

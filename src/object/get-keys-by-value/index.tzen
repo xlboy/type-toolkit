@@ -1,0 +1,25 @@
+import type { Is } from '../../guard'
+import type { MatchType } from '../../guard/is/index.tzen'
+
+interface _Options {
+  /**
+   * `->`: Value extends *
+   * `<-`: * extends Value
+   * `===`: IsEqual<Value, *>
+   * @default '->'
+   */
+  matchType?: MatchType;
+}
+
+export type GetKeysByValue<
+  O: object,
+  Value,
+  Options: _Options = { matchType: '->' }
+> = ^{
+  type OKeys = keyof O
+
+  for(infer Key in OKeys) {
+    type IsTargetKey = Is<Value, O[Key], Options['matchType']>
+    if (IsTargetKey == true) { return Key }
+  }
+}
